@@ -34,7 +34,8 @@
                 <a href="#hero" class="nav-link">Home</a>
                 <a href="#features" class="nav-link">Features</a>
                 <a href="#integrations" class="nav-link">Integrations</a>
-                <a href="#mission" class="nav-link">Mission</a>
+                <a href="#tools" class="nav-link">Tools</a>
+                <a href="#advanced" class="nav-link">Advanced</a>
                 <a href="#platforms" class="nav-link">Platforms</a>
                 <a href="#download" class="nav-link">Get Started</a>
             </div>
@@ -59,7 +60,7 @@
                     <span class="title-main">AI-Powered Development</span>
                 </h1>
                  <p class="hero-description">
-                     HelixCode is the world's first distributed AI development platform with 9 AI providers including Claude & Gemini. Combine extended thinking, 2M token context, multi-client support, and enterprise-grade security in one powerful tool.
+                     HelixCode is the world's first distributed AI development platform with 14+ AI providers including Claude, Gemini, AWS Bedrock, Azure OpenAI, VertexAI, and Groq. Combine extended thinking, 2M token context, browser automation, voice-to-code, multi-file editing, and enterprise-grade security in one powerful tool.
                  </p>
                 <div class="hero-actions">
                     <button class="btn btn-primary btn-large" onclick="showToast('Download starting...', 'success')">
@@ -111,70 +112,208 @@
                 <p class="section-subtitle">Built for the future of distributed AI development</p>
             </div>
             <div class="features-grid">
+                <!-- Core Infrastructure -->
                 <div class="feature-card" data-aos="fade-up">
-                    <div class="feature-icon">⚡</div>
-                    <h3 class="feature-title">Distributed Worker Network</h3>
-                    <p class="feature-description">Scale your development across multiple machines with SSH-based worker pools and automatic resource allocation.</p>
+                    <div class="feature-icon">📁</div>
+                    <h3 class="feature-title">File System Tools</h3>
+                    <p class="feature-description">Advanced file operations with intelligent caching, search capabilities, and safe editing for your entire codebase.</p>
                     <ul class="feature-list">
-                        <li>Automatic worker installation</li>
-                        <li>Dynamic load balancing</li>
-                        <li>Cross-platform compatibility</li>
-                        <li>Health monitoring & recovery</li>
+                        <li>Read, write, edit operations</li>
+                        <li>Pattern-based file search</li>
+                        <li>Intelligent content caching</li>
+                        <li>Safe atomic operations</li>
+                    </ul>
+                </div>
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="50">
+                    <div class="feature-icon">⚡</div>
+                    <h3 class="feature-title">Shell Execution</h3>
+                    <p class="feature-description">Execute commands safely with sandboxing, timeout controls, and comprehensive error handling.</p>
+                    <ul class="feature-list">
+                        <li>Sandboxed execution environment</li>
+                        <li>Configurable timeouts</li>
+                        <li>Stream output capture</li>
+                        <li>Error handling & recovery</li>
                     </ul>
                 </div>
                 <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
-                    <div class="feature-icon">🧠</div>
-                    <h3 class="feature-title">Advanced Reasoning & Tooling</h3>
-                    <p class="feature-description">Extended thinking with automatic detection, chain-of-thought reasoning, and full tool integration for complex problem solving.</p>
+                    <div class="feature-icon">🎯</div>
+                    <h3 class="feature-title">Plan Mode</h3>
+                    <p class="feature-description">Two-phase workflow: First plan with analysis and review, then execute with confidence.</p>
                     <ul class="feature-list">
-                        <li>Extended thinking (Anthropic)</li>
-                        <li>Chain-of-thought reasoning</li>
-                        <li>Tree-of-thoughts analysis</li>
-                        <li>Massive context (2M tokens)</li>
+                        <li>Analyze & plan phase</li>
+                        <li>Interactive review & approval</li>
+                        <li>Controlled execution phase</li>
+                        <li>Step-by-step transparency</li>
                     </ul>
                 </div>
-                 <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
-                     <div class="feature-icon">🤖</div>
-                     <h3 class="feature-title">9 AI Provider Integrations</h3>
-                     <p class="feature-description">Choose from free models or premium providers with advanced features - from local models to cloud APIs with massive context.</p>
-                     <ul class="feature-list">
-                         <li>Free: XAI Grok, OpenRouter, GitHub Copilot</li>
-                         <li>Premium: Anthropic Claude, Google Gemini</li>
-                         <li>Local: Llama.cpp, Ollama</li>
-                         <li>Extended thinking & 2M token context</li>
-                     </ul>
-                 </div>
-                <div class="feature-card" data-aos="fade-up" data-aos-delay="300">
-                    <div class="feature-icon">📱</div>
-                    <h3 class="feature-title">Multi-Client Support</h3>
-                    <p class="feature-description">Access HelixCode from any device with terminal UI, CLI, REST API, and native mobile applications.</p>
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="150">
+                    <div class="feature-icon">🌩️</div>
+                    <h3 class="feature-title">AWS Bedrock Provider</h3>
+                    <p class="feature-description">Access Claude, Titan, Jurassic, and Command models through AWS Bedrock with enterprise features.</p>
                     <ul class="feature-list">
-                        <li>Rich terminal interface</li>
-                        <li>Comprehensive REST API</li>
-                        <li>Native mobile apps</li>
-                        <li>Real-time collaboration</li>
+                        <li>Claude 4 & 3.x models</li>
+                        <li>Amazon Titan & AI21 Jurassic</li>
+                        <li>Cohere Command models</li>
+                        <li>AWS IAM authentication</li>
+                    </ul>
+                </div>
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="feature-icon">🗺️</div>
+                    <h3 class="feature-title">Codebase Mapping</h3>
+                    <p class="feature-description">Tree-sitter AST parsing for 30+ languages providing deep code understanding and analysis.</p>
+                    <ul class="feature-list">
+                        <li>30+ language support</li>
+                        <li>AST-based parsing</li>
+                        <li>Symbol extraction</li>
+                        <li>Dependency analysis</li>
+                    </ul>
+                </div>
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="250">
+                    <div class="feature-icon">🌐</div>
+                    <h3 class="feature-title">Browser Control</h3>
+                    <p class="feature-description">Chrome automation with chromedp for web scraping, testing, and interaction.</p>
+                    <ul class="feature-list">
+                        <li>Headless Chrome control</li>
+                        <li>Page navigation & interaction</li>
+                        <li>Screenshot capture</li>
+                        <li>Form filling & submission</li>
+                    </ul>
+                </div>
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="feature-icon">☁️</div>
+                    <h3 class="feature-title">Azure OpenAI Provider</h3>
+                    <p class="feature-description">Enterprise OpenAI models via Azure with Entra ID auth and deployment mapping.</p>
+                    <ul class="feature-list">
+                        <li>Microsoft Entra ID auth</li>
+                        <li>Deployment-based routing</li>
+                        <li>GPT-4, GPT-3.5 models</li>
+                        <li>Azure compliance features</li>
+                    </ul>
+                </div>
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="350">
+                    <div class="feature-icon">🔷</div>
+                    <h3 class="feature-title">VertexAI Provider</h3>
+                    <p class="feature-description">Google Cloud's Gemini and Claude Model Garden with unified access.</p>
+                    <ul class="feature-list">
+                        <li>Gemini models (2.0, 1.5)</li>
+                        <li>Claude via Model Garden</li>
+                        <li>GCP authentication</li>
+                        <li>Multi-region support</li>
                     </ul>
                 </div>
                 <div class="feature-card" data-aos="fade-up" data-aos-delay="400">
-                    <div class="feature-icon">🔔</div>
-                    <h3 class="feature-title">Smart Notifications</h3>
-                    <p class="feature-description">Multi-channel notifications with configurable rules for Slack, Discord, Telegram, Email, and more.</p>
+                    <div class="feature-icon">⚡</div>
+                    <h3 class="feature-title">Groq Provider</h3>
+                    <p class="feature-description">Ultra-fast inference with 500+ tokens/sec on specialized hardware.</p>
                     <ul class="feature-list">
-                        <li>Multi-platform support</li>
-                        <li>Configurable rules</li>
-                        <li>Rich media embeds</li>
-                        <li>Priority-based delivery</li>
+                        <li>500+ tokens/sec speed</li>
+                        <li>Llama, Mixtral models</li>
+                        <li>Low latency inference</li>
+                        <li>Cost-effective pricing</li>
                     </ul>
                 </div>
-                <div class="feature-card" data-aos="fade-up" data-aos-delay="500">
-                    <div class="feature-icon">🛡️</div>
-                    <h3 class="feature-title">Enterprise Security</h3>
-                    <p class="feature-description">End-to-end encryption, role-based access control, and comprehensive audit trails for enterprise use.</p>
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="450">
+                    <div class="feature-icon">✏️</div>
+                    <h3 class="feature-title">Multi-File Editing</h3>
+                    <p class="feature-description">Edit multiple files atomically with transaction support and automatic rollback.</p>
                     <ul class="feature-list">
-                        <li>End-to-end encryption</li>
-                        <li>Multi-factor authentication</li>
-                        <li>Role-based permissions</li>
-                        <li>GDPR/HIPAA compliance</li>
+                        <li>Atomic transactions</li>
+                        <li>Automatic rollback on error</li>
+                        <li>Batch operations</li>
+                        <li>Conflict detection</li>
+                    </ul>
+                </div>
+
+                <!-- Advanced Tools -->
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="500">
+                    <div class="feature-icon">📝</div>
+                    <h3 class="feature-title">Auto-Commit</h3>
+                    <p class="feature-description">LLM-generated commit messages that follow conventions and describe changes accurately.</p>
+                    <ul class="feature-list">
+                        <li>AI-generated messages</li>
+                        <li>Convention compliance</li>
+                        <li>Context-aware descriptions</li>
+                        <li>Automatic staging</li>
+                    </ul>
+                </div>
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="550">
+                    <div class="feature-icon">🔍</div>
+                    <h3 class="feature-title">Web Tools</h3>
+                    <p class="feature-description">Search the web and fetch content with Google, Bing, DuckDuckGo integration plus HTML parsing.</p>
+                    <ul class="feature-list">
+                        <li>Multi-provider search</li>
+                        <li>HTML content fetching</li>
+                        <li>Smart parsing & extraction</li>
+                        <li>Rate limiting & caching</li>
+                    </ul>
+                </div>
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="600">
+                    <div class="feature-icon">🗜️</div>
+                    <h3 class="feature-title">Context Compression</h3>
+                    <p class="feature-description">Automatic conversation summarization to maintain context while reducing token usage.</p>
+                    <ul class="feature-list">
+                        <li>Automatic summarization</li>
+                        <li>Token usage optimization</li>
+                        <li>Context preservation</li>
+                        <li>Configurable thresholds</li>
+                    </ul>
+                </div>
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="650">
+                    <div class="feature-icon">✅</div>
+                    <h3 class="feature-title">Tool Confirmation</h3>
+                    <p class="feature-description">Interactive confirmation prompts for dangerous operations ensuring safety and control.</p>
+                    <ul class="feature-list">
+                        <li>Dangerous operation detection</li>
+                        <li>Interactive confirmation</li>
+                        <li>Configurable sensitivity</li>
+                        <li>Operation preview</li>
+                    </ul>
+                </div>
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="700">
+                    <div class="feature-icon">🎤</div>
+                    <h3 class="feature-title">Voice-to-Code</h3>
+                    <p class="feature-description">Whisper transcription integration for hands-free coding and natural voice commands.</p>
+                    <ul class="feature-list">
+                        <li>OpenAI Whisper integration</li>
+                        <li>Real-time transcription</li>
+                        <li>Multi-language support</li>
+                        <li>High accuracy recognition</li>
+                    </ul>
+                </div>
+
+                <!-- Advanced Features -->
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="750">
+                    <div class="feature-icon">📸</div>
+                    <h3 class="feature-title">Checkpoint Snapshots</h3>
+                    <p class="feature-description">Git-based workspace snapshots for instant rollback and experimentation without risk.</p>
+                    <ul class="feature-list">
+                        <li>Git-based snapshots</li>
+                        <li>Instant rollback</li>
+                        <li>Workspace preservation</li>
+                        <li>Experiment safely</li>
+                    </ul>
+                </div>
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="800">
+                    <div class="feature-icon">🤖</div>
+                    <h3 class="feature-title">Autonomy Modes</h3>
+                    <p class="feature-description">5 levels of AI autonomy from manual control to full auto - choose your comfort level.</p>
+                    <ul class="feature-list">
+                        <li>None: Full manual control</li>
+                        <li>Low: Suggest only</li>
+                        <li>Medium: Execute with approval</li>
+                        <li>High: Limited auto-execution</li>
+                        <li>Full: Complete automation</li>
+                    </ul>
+                </div>
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="850">
+                    <div class="feature-icon">👁️</div>
+                    <h3 class="feature-title">Vision Auto-Switch</h3>
+                    <p class="feature-description">Automatically switch to vision-capable models when images are detected in your workflow.</p>
+                    <ul class="feature-list">
+                        <li>Automatic model detection</li>
+                        <li>Image analysis support</li>
+                        <li>Seamless model switching</li>
+                        <li>Context preservation</li>
                     </ul>
                 </div>
             </div>
@@ -222,9 +361,125 @@
     <section id="integrations" class="integrations">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Powerful Integrations</h2>
-                <p class="section-subtitle">Connect HelixCode with your favorite tools and services</p>
+                <h2 class="section-title">14+ AI Providers & Integrations</h2>
+                <p class="section-subtitle">Connect HelixCode with leading AI providers and communication tools</p>
             </div>
+
+            <h3 style="text-align: center; margin: 2rem 0 1.5rem; color: var(--text-primary); font-size: 1.5rem;">AI Providers</h3>
+            <div class="features-grid">
+                <div class="feature-card" data-aos="fade-up">
+                    <div class="feature-icon">🧠</div>
+                    <h3 class="feature-title">Anthropic Claude</h3>
+                    <p class="feature-description">Industry-leading AI with extended thinking, prompt caching, and tool caching for 90% cost reduction.</p>
+                    <ul class="feature-list">
+                        <li>Extended thinking (auto-detect)</li>
+                        <li>Prompt caching (5-min TTL)</li>
+                        <li>Tool caching & 200K context</li>
+                        <li>Claude 4, 3.7, 3.5 models</li>
+                    </ul>
+                </div>
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="50">
+                    <div class="feature-icon">🚀</div>
+                    <h3 class="feature-title">Google Gemini</h3>
+                    <p class="feature-description">Massive 2M token context for entire codebase analysis with function calling and multimodal support.</p>
+                    <ul class="feature-list">
+                        <li>2M token context (2.5 Pro)</li>
+                        <li>Function calling (AUTO/ANY/NONE)</li>
+                        <li>Flash models (ultra-fast)</li>
+                        <li>Vision & safety settings</li>
+                    </ul>
+                </div>
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="feature-icon">🌩️</div>
+                    <h3 class="feature-title">AWS Bedrock</h3>
+                    <p class="feature-description">Enterprise AI platform with Claude, Titan, Jurassic, and Command models through AWS infrastructure.</p>
+                    <ul class="feature-list">
+                        <li>Claude 4 & 3.x via AWS</li>
+                        <li>Amazon Titan models</li>
+                        <li>AI21 Jurassic & Cohere Command</li>
+                        <li>AWS IAM security</li>
+                    </ul>
+                </div>
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="150">
+                    <div class="feature-icon">☁️</div>
+                    <h3 class="feature-title">Azure OpenAI</h3>
+                    <p class="feature-description">Microsoft's enterprise OpenAI service with Entra ID authentication and compliance features.</p>
+                    <ul class="feature-list">
+                        <li>Microsoft Entra ID auth</li>
+                        <li>GPT-4, GPT-3.5 models</li>
+                        <li>Deployment-based routing</li>
+                        <li>Azure compliance & security</li>
+                    </ul>
+                </div>
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="feature-icon">🔷</div>
+                    <h3 class="feature-title">Google VertexAI</h3>
+                    <p class="feature-description">Google Cloud's unified AI platform with Gemini and Claude Model Garden access.</p>
+                    <ul class="feature-list">
+                        <li>Gemini 2.0 & 1.5 models</li>
+                        <li>Claude via Model Garden</li>
+                        <li>GCP authentication</li>
+                        <li>Multi-region deployment</li>
+                    </ul>
+                </div>
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="250">
+                    <div class="feature-icon">⚡</div>
+                    <h3 class="feature-title">Groq</h3>
+                    <p class="feature-description">Lightning-fast inference with 500+ tokens/sec on specialized LPU hardware.</p>
+                    <ul class="feature-list">
+                        <li>500+ tokens/sec speed</li>
+                        <li>Llama 3, Mixtral models</li>
+                        <li>Ultra-low latency</li>
+                        <li>Cost-effective inference</li>
+                    </ul>
+                </div>
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="feature-icon">🤖</div>
+                    <h3 class="feature-title">OpenAI</h3>
+                    <p class="feature-description">GPT-4, GPT-3.5, and more with function calling and streaming support.</p>
+                    <ul class="feature-list">
+                        <li>GPT-4, GPT-3.5 Turbo</li>
+                        <li>Function calling support</li>
+                        <li>Streaming responses</li>
+                        <li>Vision models available</li>
+                    </ul>
+                </div>
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="350">
+                    <div class="feature-icon">🦙</div>
+                    <h3 class="feature-title">Llama.cpp & Ollama</h3>
+                    <p class="feature-description">Local model inference with privacy-first approach and no API costs.</p>
+                    <ul class="feature-list">
+                        <li>100% local inference</li>
+                        <li>No API costs</li>
+                        <li>Full privacy control</li>
+                        <li>Multiple model support</li>
+                    </ul>
+                </div>
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="feature-icon">🌐</div>
+                    <h3 class="feature-title">OpenRouter</h3>
+                    <p class="feature-description">Access 100+ models through a unified API with automatic routing and fallbacks.</p>
+                    <ul class="feature-list">
+                        <li>100+ model access</li>
+                        <li>Unified API interface</li>
+                        <li>Automatic fallbacks</li>
+                        <li>Cost optimization</li>
+                    </ul>
+                </div>
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="450">
+                    <div class="feature-icon">🤝</div>
+                    <h3 class="feature-title">GitHub Copilot & xAI Grok</h3>
+                    <p class="feature-description">Free-tier options with GitHub Copilot integration and xAI's Grok models.</p>
+                    <ul class="feature-list">
+                        <li>GitHub Copilot API</li>
+                        <li>xAI Grok models</li>
+                        <li>Free tier available</li>
+                        <li>Developer-friendly</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3 style="text-align: center; margin: 3rem 0 1.5rem; color: var(--text-primary); font-size: 1.5rem;">Communication & Notifications</h3>
             <div class="features-grid">
                 <div class="feature-card" data-aos="fade-up">
                     <div class="feature-icon">💬</div>
@@ -270,28 +525,6 @@
                         <li>Rate limiting built-in</li>
                     </ul>
                 </div>
-                <div class="feature-card" data-aos="fade-up" data-aos-delay="400">
-                    <div class="feature-icon">🧠</div>
-                    <h3 class="feature-title">Anthropic Claude</h3>
-                    <p class="feature-description">Industry-leading AI with extended thinking, prompt caching, and tool caching for 90% cost reduction.</p>
-                    <ul class="feature-list">
-                        <li>Extended thinking (auto-detect)</li>
-                        <li>Prompt caching (5-min TTL)</li>
-                        <li>Tool caching & 200K context</li>
-                        <li>Claude 4, 3.7, 3.5 models</li>
-                    </ul>
-                </div>
-                <div class="feature-card" data-aos="fade-up" data-aos-delay="500">
-                    <div class="feature-icon">🚀</div>
-                    <h3 class="feature-title">Google Gemini</h3>
-                    <p class="feature-description">Massive 2M token context for entire codebase analysis with function calling and multimodal support.</p>
-                    <ul class="feature-list">
-                        <li>2M token context (2.5 Pro)</li>
-                        <li>Function calling (AUTO/ANY/NONE)</li>
-                        <li>Flash models (ultra-fast)</li>
-                        <li>Vision & safety settings</li>
-                    </ul>
-                </div>
             </div>
             <div class="section-cta" style="text-align: center; margin-top: 3rem;">
                 <p style="font-size: 1.1rem; margin-bottom: 1.5rem;">Ready to integrate? Check out our setup guides!</p>
@@ -299,6 +532,221 @@
                     <button class="btn btn-primary" onclick="alert('Setup guides available in docs/integrations/')">
                         <span class="btn-icon">📖</span>
                         View Setup Guides
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tools & Workflows Section -->
+    <section id="tools" class="features">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Comprehensive Development Tools</h2>
+                <p class="section-subtitle">Everything you need for AI-powered development workflows</p>
+            </div>
+
+            <h3 style="text-align: center; margin: 2rem 0 1.5rem; color: var(--text-primary); font-size: 1.5rem;">Development Tools</h3>
+            <div class="features-grid">
+                <div class="feature-card" data-aos="fade-up">
+                    <div class="feature-icon">📁</div>
+                    <h3 class="feature-title">File System Tools</h3>
+                    <p class="feature-description">Complete file operations with caching and search for efficient codebase management.</p>
+                    <ul class="feature-list">
+                        <li>Read/Write/Edit operations</li>
+                        <li>Pattern-based search</li>
+                        <li>Content caching</li>
+                        <li>Atomic operations</li>
+                    </ul>
+                </div>
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="feature-icon">⚡</div>
+                    <h3 class="feature-title">Shell Execution</h3>
+                    <p class="feature-description">Safe command execution with sandboxing and comprehensive error handling.</p>
+                    <ul class="feature-list">
+                        <li>Sandboxed environment</li>
+                        <li>Timeout controls</li>
+                        <li>Stream output capture</li>
+                        <li>Error recovery</li>
+                    </ul>
+                </div>
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="feature-icon">🌐</div>
+                    <h3 class="feature-title">Browser Control</h3>
+                    <p class="feature-description">Headless Chrome automation for web testing and interaction.</p>
+                    <ul class="feature-list">
+                        <li>Chrome automation</li>
+                        <li>Web scraping</li>
+                        <li>Screenshot capture</li>
+                        <li>Form interaction</li>
+                    </ul>
+                </div>
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="feature-icon">🔍</div>
+                    <h3 class="feature-title">Web Search & Fetch</h3>
+                    <p class="feature-description">Multi-provider search and HTML content fetching capabilities.</p>
+                    <ul class="feature-list">
+                        <li>Google/Bing/DuckDuckGo</li>
+                        <li>HTML parsing</li>
+                        <li>Smart extraction</li>
+                        <li>Rate limiting</li>
+                    </ul>
+                </div>
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="feature-icon">🎤</div>
+                    <h3 class="feature-title">Voice-to-Code</h3>
+                    <p class="feature-description">Whisper integration for hands-free voice commands and coding.</p>
+                    <ul class="feature-list">
+                        <li>OpenAI Whisper</li>
+                        <li>Real-time transcription</li>
+                        <li>Multi-language</li>
+                        <li>High accuracy</li>
+                    </ul>
+                </div>
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="500">
+                    <div class="feature-icon">🗺️</div>
+                    <h3 class="feature-title">Codebase Mapping</h3>
+                    <p class="feature-description">Deep code analysis with Tree-sitter AST parsing for 30+ languages.</p>
+                    <ul class="feature-list">
+                        <li>30+ languages</li>
+                        <li>AST parsing</li>
+                        <li>Symbol extraction</li>
+                        <li>Dependency analysis</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3 style="text-align: center; margin: 3rem 0 1.5rem; color: var(--text-primary); font-size: 1.5rem;">Smart Workflows</h3>
+            <div class="features-grid">
+                <div class="feature-card" data-aos="fade-up">
+                    <div class="feature-icon">🎯</div>
+                    <h3 class="feature-title">Plan Mode</h3>
+                    <p class="feature-description">Two-phase workflow with planning and execution for controlled development.</p>
+                    <ul class="feature-list">
+                        <li>Analyze & plan phase</li>
+                        <li>Review & approval</li>
+                        <li>Controlled execution</li>
+                        <li>Full transparency</li>
+                    </ul>
+                </div>
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="feature-icon">✏️</div>
+                    <h3 class="feature-title">Multi-File Editing</h3>
+                    <p class="feature-description">Atomic transactions across multiple files with automatic rollback.</p>
+                    <ul class="feature-list">
+                        <li>Atomic transactions</li>
+                        <li>Auto rollback</li>
+                        <li>Batch operations</li>
+                        <li>Conflict detection</li>
+                    </ul>
+                </div>
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="feature-icon">📝</div>
+                    <h3 class="feature-title">Auto-Commit</h3>
+                    <p class="feature-description">AI-generated commit messages that follow conventions automatically.</p>
+                    <ul class="feature-list">
+                        <li>LLM-generated messages</li>
+                        <li>Convention compliance</li>
+                        <li>Context-aware</li>
+                        <li>Automatic staging</li>
+                    </ul>
+                </div>
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="feature-icon">🗜️</div>
+                    <h3 class="feature-title">Context Compression</h3>
+                    <p class="feature-description">Automatic conversation summarization for optimal token usage.</p>
+                    <ul class="feature-list">
+                        <li>Auto summarization</li>
+                        <li>Token optimization</li>
+                        <li>Context preservation</li>
+                        <li>Configurable thresholds</li>
+                    </ul>
+                </div>
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="feature-icon">✅</div>
+                    <h3 class="feature-title">Tool Confirmation</h3>
+                    <p class="feature-description">Safety confirmations for dangerous operations with preview.</p>
+                    <ul class="feature-list">
+                        <li>Danger detection</li>
+                        <li>Interactive approval</li>
+                        <li>Operation preview</li>
+                        <li>Configurable rules</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Advanced Features Section -->
+    <section id="advanced" class="integrations">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Advanced Features</h2>
+                <p class="section-subtitle">Cutting-edge capabilities for power users and enterprises</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card" data-aos="fade-up">
+                    <div class="feature-icon">📸</div>
+                    <h3 class="feature-title">Checkpoint Snapshots</h3>
+                    <p class="feature-description">Git-based workspace snapshots enabling instant rollback and safe experimentation without risk.</p>
+                    <ul class="feature-list">
+                        <li>Git-based snapshots</li>
+                        <li>Instant rollback capability</li>
+                        <li>Workspace preservation</li>
+                        <li>Safe experimentation</li>
+                        <li>Automatic checkpoint creation</li>
+                        <li>Named snapshot management</li>
+                    </ul>
+                    <div style="margin-top: 1rem; padding: 0.75rem; background: var(--bg-tertiary); border-radius: 8px; font-size: 0.9rem;">
+                        <strong>Usage:</strong> Create snapshots before major changes, experiment freely, and restore instantly if needed.
+                    </div>
+                </div>
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="feature-icon">🤖</div>
+                    <h3 class="feature-title">5-Level Autonomy Modes</h3>
+                    <p class="feature-description">Choose your AI autonomy level from full manual control to complete automation - adapting to your trust and workflow.</p>
+                    <ul class="feature-list">
+                        <li><strong>None:</strong> Manual control only</li>
+                        <li><strong>Low:</strong> AI suggests, you decide</li>
+                        <li><strong>Medium:</strong> Execute with approval</li>
+                        <li><strong>High:</strong> Limited auto-execution</li>
+                        <li><strong>Full Auto:</strong> Complete automation</li>
+                    </ul>
+                    <div style="margin-top: 1rem; padding: 0.75rem; background: var(--bg-tertiary); border-radius: 8px; font-size: 0.9rem;">
+                        <strong>Use Cases:</strong> Start with Low for learning, move to Medium for daily work, use High for trusted tasks, Full Auto for routine operations.
+                    </div>
+                </div>
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="feature-icon">👁️</div>
+                    <h3 class="feature-title">Vision Auto-Switch</h3>
+                    <p class="feature-description">Intelligent automatic switching to vision-capable models when images are detected in your workflow.</p>
+                    <ul class="feature-list">
+                        <li>Automatic image detection</li>
+                        <li>Seamless model switching</li>
+                        <li>Context preservation</li>
+                        <li>Vision model optimization</li>
+                        <li>Multi-modal support</li>
+                        <li>Performance optimization</li>
+                    </ul>
+                    <div style="margin-top: 1rem; padding: 0.75rem; background: var(--bg-tertiary); border-radius: 8px; font-size: 0.9rem;">
+                        <strong>Smart Detection:</strong> Automatically uses Claude 3.5 Sonnet, GPT-4 Vision, or Gemini Pro Vision when images are present.
+                    </div>
+                </div>
+            </div>
+
+            <div class="section-cta" style="text-align: center; margin-top: 3rem;">
+                <h3 style="margin-bottom: 1rem; font-size: 1.5rem;">Getting Started with Advanced Features</h3>
+                <p style="font-size: 1.1rem; margin-bottom: 1.5rem; max-width: 800px; margin-left: auto; margin-right: auto;">
+                    These advanced features provide enterprise-grade capabilities for teams requiring sophisticated control, experimentation, and automation in their development workflows.
+                </p>
+                <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                    <button class="btn btn-primary" onclick="scrollToSection('download')">
+                        <span class="btn-icon">🚀</span>
+                        Get Started Now
+                    </button>
+                    <button class="btn btn-outline" onclick="alert('Documentation available at docs/')">
+                        <span class="btn-icon">📚</span>
+                        View Documentation
                     </button>
                 </div>
             </div>
@@ -366,16 +814,20 @@
                 </div>
                 <div class="download-stats">
                     <div class="stat">
-                        <div class="stat-number">10K+</div>
-                        <div class="stat-label">Active Developers</div>
+                        <div class="stat-number">14+</div>
+                        <div class="stat-label">AI Providers</div>
                     </div>
                     <div class="stat">
-                        <div class="stat-number">99.9%</div>
-                        <div class="stat-label">Uptime</div>
+                        <div class="stat-number">18</div>
+                        <div class="stat-label">New Features</div>
                     </div>
                     <div class="stat">
-                        <div class="stat-number">500ms</div>
-                        <div class="stat-label">Avg Response Time</div>
+                        <div class="stat-number">30+</div>
+                        <div class="stat-label">Languages Supported</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">500+</div>
+                        <div class="stat-label">Tokens/sec (Groq)</div>
                     </div>
                 </div>
             </div>

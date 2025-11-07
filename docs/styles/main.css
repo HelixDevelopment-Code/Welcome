@@ -131,6 +131,11 @@ body {
   font-weight: 500;
   transition: all 0.3s ease;
   position: relative;
+  padding: 0 1rem; /* Add horizontal padding for spacing */
+}
+
+.nav-link:first-child {
+  padding-left: 2rem; /* Extra left padding for Home from logo */
 }
 
 .nav-link:hover {
@@ -197,7 +202,7 @@ body {
   align-items: center;
   position: relative;
   overflow: hidden;
-  padding-top: 120px; /* Increased from 80px to prevent header overlap */
+  padding-top: 140px; /* Increased from 120px to prevent title going below header */
   padding-bottom: 3rem; /* Add bottom padding to prevent buttons from touching edge */
   background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
 }

@@ -41,6 +41,7 @@ body {
   color: var(--text-primary);
   transition: all 0.3s ease;
   line-height: 1.6;
+  font-size: clamp(0.875rem, 1vw, 1rem); /* Responsive font sizing */
 }
 
 .container {
@@ -60,6 +61,7 @@ body {
   border-bottom: 1px solid var(--border-light);
   z-index: 100;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  padding-right: 80px; /* Make space for theme toggle */
 }
 
 [data-theme="dark"] .navbar {
@@ -93,6 +95,34 @@ body {
 .nav-menu {
   display: flex;
   gap: 2rem;
+}
+
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 4px;
+  cursor: pointer;
+  z-index: 101;
+}
+
+.nav-toggle span {
+  width: 25px;
+  height: 3px;
+  background: var(--text-primary);
+  border-radius: 3px;
+  transition: all 0.3s ease;
+}
+
+.nav-toggle.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.nav-toggle.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.nav-toggle.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(7px, -6px);
 }
 
 .nav-link {
@@ -166,7 +196,7 @@ body {
   align-items: center;
   position: relative;
   overflow: hidden;
-  padding-top: 80px;
+  padding-top: 120px; /* Increased from 80px to prevent header overlap */
   background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
 }
 
@@ -207,7 +237,7 @@ body {
 }
 
 .hero-title {
-  font-size: 4rem;
+  font-size: clamp(2rem, 5vw, 4rem);
   font-weight: 700;
   line-height: 1.1;
   margin-bottom: 2rem;
@@ -215,7 +245,7 @@ body {
 }
 
 .hero-description {
-  font-size: 1.25rem;
+  font-size: clamp(1rem, 2vw, 1.25rem);
   color: var(--text-secondary);
   margin-bottom: 3rem;
   max-width: 500px;
@@ -480,7 +510,7 @@ body {
 
 /* Features Section */
 .features {
-  padding: 6rem 0;
+  padding: 6rem 0 4rem; /* Added bottom padding */
   background: var(--bg-secondary);
   position: relative;
 }
@@ -492,7 +522,7 @@ body {
 }
 
 .section-title {
-  font-size: 3rem;
+  font-size: clamp(2rem, 4vw, 3rem);
   font-weight: 700;
   margin-bottom: 1rem;
   color: var(--text-primary);
@@ -513,7 +543,7 @@ body {
 }
 
 .section-subtitle {
-  font-size: 1.25rem;
+  font-size: clamp(1rem, 2vw, 1.25rem);
   color: var(--text-secondary);
   max-width: 600px;
   margin: 0 auto;
@@ -550,7 +580,7 @@ body {
 }
 
 .feature-title {
-  font-size: 1.5rem;
+  font-size: clamp(1.25rem, 3vw, 1.5rem);
   font-weight: 600;
   margin-bottom: 1rem;
   color: var(--text-primary);
@@ -560,6 +590,7 @@ body {
   color: var(--text-secondary);
   margin-bottom: 1.5rem;
   line-height: 1.6;
+  font-size: clamp(0.875rem, 1.5vw, 1rem);
 }
 
 .feature-list {
@@ -584,7 +615,7 @@ body {
 
 /* Mission Section */
 .mission {
-  padding: 6rem 0;
+  padding: 6rem 0 4rem; /* Added bottom padding */
   background: var(--bg-primary);
   position: relative;
 }
@@ -595,7 +626,7 @@ body {
 }
 
 .mission-title {
-  font-size: 3rem;
+  font-size: clamp(2rem, 4vw, 3rem);
   font-weight: 700;
   margin-bottom: 2rem;
   text-align: center;
@@ -603,7 +634,7 @@ body {
 }
 
 .mission-statement {
-  font-size: 1.25rem;
+  font-size: clamp(1rem, 2vw, 1.25rem);
   color: var(--text-secondary);
   text-align: center;
   margin-bottom: 3rem;
@@ -642,7 +673,7 @@ body {
 }
 
 .point-content h4 {
-  font-size: 1.25rem;
+  font-size: clamp(1.125rem, 2.5vw, 1.25rem);
   font-weight: 600;
   margin-bottom: 0.5rem;
   color: var(--text-primary);
@@ -655,7 +686,7 @@ body {
 
 /* Platforms Section */
 .platforms {
-  padding: 6rem 0;
+  padding: 6rem 0 4rem; /* Added bottom padding */
   background: var(--bg-secondary);
   position: relative;
 }
@@ -692,7 +723,7 @@ body {
 }
 
 .platform-title {
-  font-size: 1.5rem;
+  font-size: clamp(1.25rem, 3vw, 1.5rem);
   font-weight: 600;
   margin-bottom: 1.5rem;
   color: var(--text-primary);
@@ -710,7 +741,7 @@ body {
 
 /* Download Section */
 .download {
-  padding: 6rem 0;
+  padding: 6rem 0 4rem; /* Added bottom padding */
   background: var(--bg-primary);
   position: relative;
 }
@@ -722,14 +753,14 @@ body {
 }
 
 .download-title {
-  font-size: 3rem;
+  font-size: clamp(2rem, 4vw, 3rem);
   font-weight: 700;
   margin-bottom: 1rem;
   color: var(--text-primary);
 }
 
 .download-subtitle {
-  font-size: 1.25rem;
+  font-size: clamp(1rem, 2vw, 1.25rem);
   color: var(--text-secondary);
   margin-bottom: 3rem;
 }
@@ -754,7 +785,7 @@ body {
 }
 
 .stat-number {
-  font-size: 2rem;
+  font-size: clamp(1.5rem, 3vw, 2rem);
   font-weight: 700;
   color: var(--primary-500);
   margin-bottom: 0.5rem;
@@ -893,44 +924,131 @@ body {
 }
 
 /* Responsive */
+@media (max-width: 1200px) {
+  .container {
+    padding: 0 1.5rem;
+  }
+  
+  .hero-content {
+    gap: 3rem;
+  }
+  
+  .features-grid {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+  }
+}
+
 @media (max-width: 768px) {
+  .container {
+    padding: 0 1rem;
+  }
+  
+  .nav-container {
+    padding: 1rem;
+  }
+  
   .hero-content {
     grid-template-columns: 1fr;
     text-align: center;
+    gap: 2rem;
+    padding: 0 1rem;
   }
   
-  .hero-title {
-    font-size: 2.5rem;
-  }
-  
-  .nav-menu {
-    display: none;
+  .hero-actions {
+    justify-content: center;
   }
   
   .features-grid {
     grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .feature-card {
+    padding: 1.5rem;
   }
   
   .mission-point {
     flex-direction: column;
     text-align: center;
+    padding: 1.5rem;
   }
   
   .platforms-grid {
     grid-template-columns: 1fr;
+    gap: 1.5rem;
   }
   
   .download-actions {
     flex-direction: column;
     align-items: center;
+    gap: 1rem;
   }
   
   .footer-content {
     grid-template-columns: 1fr;
     text-align: center;
+    gap: 2rem;
   }
   
   .footer-links {
     grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .toast-container {
+    right: 1rem;
+    left: 1rem;
+  }
+  
+  .toast {
+    max-width: none;
+  }
+  
+  .theme-toggle {
+    top: 1rem;
+    right: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .btn {
+    padding: 0.875rem 1.25rem;
+    font-size: 0.9rem;
+  }
+  
+  .btn-large {
+    padding: 1.25rem 1.75rem;
+    font-size: 1rem;
+  }
+  
+  .btn-xlarge {
+    padding: 1.5rem 2rem;
+    font-size: 1.125rem;
+  }
+  
+  .hero-actions {
+    gap: 1rem;
+  }
+  
+  .download-actions {
+    gap: 1rem;
+  }
+  
+  .footer-logo {
+    font-size: 1.125rem;
+  }
+  
+  .nav-logo {
+    font-size: 1.125rem;
+  }
+  
+  .feature-card {
+    padding: 1rem;
+  }
+  
+  .terminal-body {
+    padding: 1rem;
+    font-size: 0.8rem;
   }
 }

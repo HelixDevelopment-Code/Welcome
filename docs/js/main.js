@@ -116,11 +116,22 @@ class NavigationManager {
 
         // Mobile menu toggle
         const navToggle = document.querySelector('.nav-toggle');
+        const navMenu = document.querySelector('.nav-menu');
+        
         if (navToggle) {
             navToggle.addEventListener('click', () => {
-                this.toggleMobileMenu();
+                navToggle.classList.toggle('active');
+                navMenu.classList.toggle('active');
             });
         }
+        
+        // Close mobile menu when clicking on a link
+        this.navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                navToggle.classList.remove('active');
+                navMenu.classList.remove('active');
+            });
+        });
     }
 
     handleScroll() {
@@ -139,7 +150,7 @@ class NavigationManager {
 
     updateActiveNavLink() {
         const sections = document.querySelectorAll('section[id]');
-        const scrollPos = window.scrollY + 100;
+        const scrollPos = window.scrollY + 120; // Updated offset to match hero padding
 
         sections.forEach(section => {
             const sectionTop = section.offsetTop;
@@ -160,17 +171,12 @@ class NavigationManager {
     scrollToSection(sectionId) {
         const section = document.getElementById(sectionId);
         if (section) {
-            const offsetTop = section.offsetTop - 80; // Account for fixed navbar
+            const offsetTop = section.offsetTop - 120; // Updated offset to match hero padding
             window.scrollTo({
                 top: offsetTop,
                 behavior: 'smooth'
             });
         }
-    }
-
-    toggleMobileMenu() {
-        const navMenu = document.querySelector('.nav-menu');
-        navMenu.classList.toggle('active');
     }
 }
 

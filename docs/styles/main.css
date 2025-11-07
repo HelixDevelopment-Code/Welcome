@@ -61,7 +61,7 @@ body {
   border-bottom: 1px solid var(--border-light);
   z-index: 100;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-  padding-right: 80px; /* Make space for theme toggle */
+  padding: 0 80px 0 0; /* Make space for theme toggle, but not on nav content */
 }
 
 [data-theme="dark"] .navbar {
@@ -153,11 +153,12 @@ body {
 }
 
 .nav-link.active {
-  color: var(--primary-500);
+  color: var(--accent-1); /* Light green from logo */
 }
 
 .nav-link.active::after {
   width: 100%;
+  background: var(--accent-1); /* Light green from logo */
 }
 
 /* Theme Toggle */
@@ -197,6 +198,7 @@ body {
   position: relative;
   overflow: hidden;
   padding-top: 120px; /* Increased from 80px to prevent header overlap */
+  padding-bottom: 3rem; /* Add bottom padding to prevent buttons from touching edge */
   background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
 }
 
@@ -686,7 +688,7 @@ body {
 
 /* Platforms Section */
 .platforms {
-  padding: 6rem 0 4rem; /* Added bottom padding */
+  padding: 6rem 0 5rem; /* Increased bottom padding from 4rem to 5rem */
   background: var(--bg-secondary);
   position: relative;
 }

@@ -37,6 +37,7 @@
                 <a href="#tools" class="nav-link">Tools</a>
                 <a href="#advanced" class="nav-link">Advanced</a>
                 <a href="#specialized-platforms" class="nav-link">Specialized</a>
+                <a href="#e2e-testing" class="nav-link">Testing</a>
                 <a href="#platforms" class="nav-link">Platforms</a>
                 <a href="#download" class="nav-link">Get Started</a>
             </div>
@@ -823,6 +824,76 @@
         </div>
     </section>
 
+    <!-- Quality Assurance & Testing Section -->
+    <section id="e2e-testing" class="integrations">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Quality Assurance & E2E Testing</h2>
+                <p class="section-subtitle">Comprehensive AI-powered testing framework ensuring reliability and quality</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card" data-aos="fade-up">
+                    <div class="feature-icon">🧪</div>
+                    <h3 class="feature-title">E2E Testing Framework</h3>
+                    <p class="feature-description">Complete end-to-end testing system with real AI execution, mock services, and distributed testing scenarios.</p>
+                    <ul class="feature-list">
+                        <li><strong>20+ Docker Services:</strong> Full test infrastructure with PostgreSQL, Redis, Ollama, mock LLMs</li>
+                        <li><strong>AI-Powered QA:</strong> Real AI agents execute and validate tests automatically</li>
+                        <li><strong>Test Case Bank:</strong> 100+ test scenarios covering core, integration, and distributed tests</li>
+                        <li><strong>Mock Services:</strong> LLM providers, Slack, storage for isolated testing</li>
+                        <li><strong>Real Integrations:</strong> Actual API tests with OpenAI, Anthropic, local Ollama</li>
+                        <li><strong>Distributed Testing:</strong> Multi-node coordination and failover scenarios</li>
+                        <li><strong>Detailed Reporting:</strong> Real-time dashboard with metrics, logs, and failure analysis</li>
+                    </ul>
+                    <div class="feature-links">
+                        <a href="https://github.com/helixcode/helixcode/blob/main/tests/e2e/README.md" target="_blank" class="btn btn-outline btn-sm">Quick Start →</a>
+                        <a href="https://github.com/helixcode/helixcode/blob/main/tests/e2e/E2E_TESTING_FRAMEWORK.md" target="_blank" class="btn btn-outline btn-sm">Full Documentation →</a>
+                        <a href="https://github.com/helixcode/helixcode/blob/main/tests/e2e/INTEGRATION_GUIDE.md" target="_blank" class="btn btn-outline btn-sm">Integration Guide →</a>
+                    </div>
+                </div>
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="feature-icon">🐳</div>
+                    <h3 class="feature-title">Docker Testing Infrastructure</h3>
+                    <p class="feature-description">Multi-container environment for comprehensive testing across all platforms and configurations.</p>
+                    <ul class="feature-list">
+                        <li><strong>Service Profiles:</strong> Full, mocks, local-llm, monitoring, distributed</li>
+                        <li><strong>Core Services:</strong> HelixCode Server, Aurora OS, Harmony OS</li>
+                        <li><strong>Local LLMs:</strong> Ollama and llama.cpp for offline testing</li>
+                        <li><strong>Monitoring Stack:</strong> Prometheus and Grafana for metrics</li>
+                        <li><strong>Test Orchestrator:</strong> CLI tool for test execution and reporting</li>
+                    </ul>
+                    <div class="feature-code">
+                        <pre><code># Start full testing environment
+cd tests/e2e/docker
+docker-compose -f docker-compose.e2e.yml --profile full up -d
+
+# Run tests
+cd ../orchestrator
+go run cmd/main.go run --all
+
+# View dashboard at http://localhost:8088</code></pre>
+                    </div>
+                </div>
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="feature-icon">📊</div>
+                    <h3 class="feature-title">Test Coverage & Reporting</h3>
+                    <p class="feature-description">Comprehensive test coverage with detailed reporting and real-time monitoring.</p>
+                    <ul class="feature-list">
+                        <li><strong>Coverage Goals:</strong> 80%+ unit, 70%+ integration, 50%+ E2E tests</li>
+                        <li><strong>Test Categories:</strong> Core, integration, automation, distributed, platform, E2E</li>
+                        <li><strong>Real-time Dashboard:</strong> Live test execution status and results</li>
+                        <li><strong>Multiple Formats:</strong> JSON, HTML, JUnit XML reporting</li>
+                        <li><strong>CI/CD Integration:</strong> GitHub Actions with automated test execution</li>
+                        <li><strong>Legacy Integration:</strong> Existing tests incorporated via adapter pattern</li>
+                    </ul>
+                    <div class="feature-links">
+                        <a href="https://github.com/helixcode/helixcode/blob/main/tests/e2e/E2E_TESTING_IMPLEMENTATION_PLAN.md" target="_blank" class="btn btn-outline btn-sm">Implementation Plan →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Platforms Section -->
     <section id="platforms" class="platforms">
         <div class="container">
@@ -939,6 +1010,13 @@
                         <a href="https://github.com/helixcode/helixcode/blob/main/docs/HARMONY_OS_GUIDE.md" target="_blank">Harmony OS Guide</a>
                         <a href="https://github.com/helixcode/helixcode/blob/main/docs/SPECIALIZED_PLATFORMS_QUICKSTART.md" target="_blank">Quick Start</a>
                         <a href="https://github.com/helixcode/helixcode/blob/main/docs/SPECIALIZED_PLATFORMS_DEPLOYMENT.md" target="_blank">Deployment Guide</a>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Testing & QA</h4>
+                        <a href="https://github.com/helixcode/helixcode/blob/main/tests/e2e/README.md" target="_blank">E2E Testing Guide</a>
+                        <a href="https://github.com/helixcode/helixcode/blob/main/tests/e2e/E2E_TESTING_FRAMEWORK.md" target="_blank">Testing Framework</a>
+                        <a href="https://github.com/helixcode/helixcode/blob/main/tests/e2e/INTEGRATION_GUIDE.md" target="_blank">Integration Guide</a>
+                        <a href="https://github.com/helixcode/helixcode/blob/main/tests/e2e/E2E_TESTING_IMPLEMENTATION_PLAN.md" target="_blank">Implementation Plan</a>
                     </div>
                     <div class="footer-column">
                         <h4>Community</h4>

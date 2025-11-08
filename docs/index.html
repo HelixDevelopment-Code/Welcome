@@ -13,14 +13,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Theme Toggle -->
-    <div class="theme-toggle">
-        <button id="themeToggle" class="theme-toggle-btn" aria-label="Toggle theme">
-            <span class="theme-icon sun">☀️</span>
-            <span class="theme-icon moon">🌙</span>
-        </button>
-    </div>
-
     <!-- Toast Container -->
     <div id="toastContainer" class="toast-container"></div>
 
@@ -51,6 +43,16 @@
             </div>
         </div>
     </nav>
+    
+    <!-- Theme Toggle - Moved below header with spacing -->
+    <div class="theme-toggle-header">
+        <div class="theme-toggle">
+            <button id="themeToggle" class="theme-toggle-btn" aria-label="Toggle theme">
+                <span class="theme-icon sun">☀️</span>
+                <span class="theme-icon moon">🌙</span>
+            </button>
+        </div>
+    </div>
 
     <!-- Hero Section -->
     <section id="hero" class="hero">

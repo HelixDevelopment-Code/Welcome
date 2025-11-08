@@ -1,0 +1,7 @@
+{
+  "last_sync": "2025-11-08 11:43:50",
+  "source": "/Users/milosvasic/Projects/HelixCode/HelixCode/Documentation/User_Manual",
+  "destination": "/Users/milosvasic/Projects/HelixCode/Github-Pages-Website/docs/manual",
+  "version": "1.0",
+  "sync_script": "scripts/sync-manual.sh"
+}

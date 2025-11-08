@@ -1633,3 +1633,28 @@ html {
   transform: translateY(-2px);
   box-shadow: 0 6px 16px rgba(14, 165, 233, 0.5);
 }
+
+/* FINAL CRITICAL FIXES */
+
+/* Hide Mobile Menu Toggle on Desktop */
+@media (min-width: 769px) {
+  .mobile-menu-toggle {
+    display: none !important;
+  }
+}
+
+/* Smooth Scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Scroll-to-Top Button - Green Brand */
+.scroll-to-top {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.scroll-to-top.visible {
+  opacity: 1;
+  visibility: visible;
+}

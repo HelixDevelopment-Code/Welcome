@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="auto">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>HelixCode Mobile - Distributed AI Development Platform</title>
+    <meta name="description" content="HelixCode mobile - Enterprise AI development platform optimized for mobile devices.">
+
+    <!-- Mobile-specific stylesheets -->
+    <link rel="stylesheet" href="styles/mobile-main.css">
+    <link rel="stylesheet" href="styles/mobile-components.css">
+
+    <!-- Shared Favicon from parent assets -->
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon-16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../assets/favicon-180.png">
+    <link rel="shortcut icon" href="../assets/favicon.ico">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Mobile Header with Logo -->
+    <header class="mobile-header">
+        <div class="header-logo">
+            <img src="../assets/logo.png" alt="HelixCode Logo" class="logo-img">
+            <span class="logo-text">HelixCode</span>
+        </div>
+        <button id="mobileMenuToggle" class="menu-toggle" aria-label="Toggle menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </header>
+
+    <!-- Mobile Navigation Menu -->
+    <nav class="mobile-nav" id="mobileNav">
+        <button class="nav-close" id="navClose" aria-label="Close menu">×</button>
+        <ul class="mobile-nav-list">
+            <li><a href="#hero" class="nav-link">Home</a></li>
+            <li><a href="#features" class="nav-link">Features</a></li>
+            <li><a href="#integrations" class="nav-link">Integrations</a></li>
+            <li><a href="#advanced" class="nav-link">Advanced</a></li>
+            <li><a href="#e2e-testing" class="nav-link">E2E Testing</a></li>
+            <li><a href="#platforms" class="nav-link">Platforms</a></li>
+            <li><a href="#courses" class="nav-link">Courses</a></li>
+            <li><a href="#download" class="nav-link">Get Started</a></li>
+        </ul>
+        <button id="themeToggleMobile" class="theme-toggle-mobile" aria-label="Toggle theme">
+            <span class="theme-icon sun">☀️</span>
+            <span class="theme-icon moon">🌙</span>
+        </button>
+    </nav>
+
+    <!-- Mobile Overlay -->
+    <div class="mobile-overlay" id="mobileOverlay"></div>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero-mobile">
+        <div class="hero-content-mobile">
+            <h1 class="hero-title-mobile">
+                <span class="title-gradient">Revolutionize</span>
+                <span class="title-main">Enterprise AI Development</span>
+            </h1>
+            <p class="hero-description-mobile">
+                The world's most advanced enterprise AI development platform with 18+ AI providers including Anthropic Claude, Google Gemini, AWS Bedrock, and more.
+            </p>
+            <div class="hero-badges-mobile">
+                <span class="badge">🤖 18+ AI Providers</span>
+                <span class="badge">📚 2M Context</span>
+                <span class="badge">🛡️ Enterprise Security</span>
+            </div>
+            <div class="hero-actions-mobile">
+                <button class="btn btn-primary-mobile">
+                    🚀 Download Now
+                </button>
+                <button class="btn btn-secondary-mobile" onclick="scrollToSection('features')">
+                    ✨ Explore Features
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="section-mobile">
+        <div class="section-header-mobile">
+            <h2 class="section-title-mobile">Why HelixCode is Revolutionary</h2>
+            <p class="section-subtitle-mobile">Enterprise AI development platform</p>
+        </div>
+        <div class="features-mobile">
+            <!-- AI Providers -->
+            <div class="feature-card-mobile">
+                <div class="feature-icon-mobile">🤖</div>
+                <h3 class="feature-title-mobile">18+ AI Providers</h3>
+                <p class="feature-description-mobile">Access leading AI models with automatic selection, intelligent fallback, and 90% cost reduction.</p>
+                <button class="expand-btn" onclick="toggleExpand(this)">Learn More</button>
+                <div class="feature-details">
+                    <ul>
+                        <li>Optimal Performance: Auto-select best AI</li>
+                        <li>90% cost reduction with smart routing</li>
+                        <li>Automatic fallback for 100% uptime</li>
+                        <li>Specialized models for different domains</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Extended Thinking -->
+            <div class="feature-card-mobile">
+                <div class="feature-icon-mobile">🧠</div>
+                <h3 class="feature-title-mobile">Extended Thinking</h3>
+                <p class="feature-description-mobile">Advanced AI reasoning with transparent thinking and automated problem decomposition.</p>
+                <button class="expand-btn" onclick="toggleExpand(this)">Learn More</button>
+                <div class="feature-details">
+                    <ul>
+                        <li>Complex problem solving</li>
+                        <li>Transparent reasoning process</li>
+                        <li>90% cost reduction through caching</li>
+                        <li>Quality assurance through systematic thinking</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Massive Context -->
+            <div class="feature-card-mobile">
+                <div class="feature-icon-mobile">📚</div>
+                <h3 class="feature-title-mobile">2M Token Context</h3>
+                <p class="feature-description-mobile">Process entire codebases and large projects in a single request.</p>
+                <button class="expand-btn" onclick="toggleExpand(this)">Learn More</button>
+                <div class="feature-details">
+                    <ul>
+                        <li>Analyze entire codebases</li>
+                        <li>Comprehensive system understanding</li>
+                        <li>Coordinated changes across projects</li>
+                        <li>Complete documentation processing</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Distributed Architecture -->
+            <div class="feature-card-mobile">
+                <div class="feature-icon-mobile">🌐</div>
+                <h3 class="feature-title-mobile">Distributed Computing</h3>
+                <p class="feature-description-mobile">SSH-based worker pools with automatic scaling and fault tolerance.</p>
+                <button class="expand-btn" onclick="toggleExpand(this)">Learn More</button>
+                <div class="feature-details">
+                    <ul>
+                        <li>SSH worker pools with auto-management</li>
+                        <li>Automatic scaling on demand</li>
+                        <li>Fault tolerance with automatic recovery</li>
+                        <li>Intelligent load balancing</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Security -->
+            <div class="feature-card-mobile">
+                <div class="feature-icon-mobile">🔒</div>
+                <h3 class="feature-title-mobile">Zero-Tolerance Security</h3>
+                <p class="feature-description-mobile">Enterprise-grade security with complete data isolation and encryption.</p>
+                <button class="expand-btn" onclick="toggleExpand(this)">Learn More</button>
+                <div class="feature-details">
+                    <ul>
+                        <li>Complete data isolation</li>
+                        <li>End-to-end encryption</li>
+                        <li>On-premise deployment options</li>
+                        <li>Compliance with SOC 2, GDPR, HIPAA</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- E2E Testing -->
+            <div class="feature-card-mobile">
+                <div class="feature-icon-mobile">🧪</div>
+                <h3 class="feature-title-mobile">E2E Testing</h3>
+                <p class="feature-description-mobile">Comprehensive end-to-end testing with AI-powered test generation.</p>
+                <button class="expand-btn" onclick="toggleExpand(this)">Learn More</button>
+                <div class="feature-details">
+                    <ul>
+                        <li>AI-powered test generation</li>
+                        <li>Automated test execution</li>
+                        <li>Intelligent bug detection</li>
+                        <li>Continuous quality monitoring</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Integrations Section -->
+    <section id="integrations" class="section-mobile">
+        <div class="section-header-mobile">
+            <h2 class="section-title-mobile">AI Provider Integrations</h2>
+            <p class="section-subtitle-mobile">Connect to 18+ leading AI providers</p>
+        </div>
+        <div class="integrations-grid-mobile">
+            <div class="integration-card">
+                <span class="integration-name">Anthropic Claude</span>
+                <span class="integration-badge">Extended Thinking</span>
+            </div>
+            <div class="integration-card">
+                <span class="integration-name">Google Gemini</span>
+                <span class="integration-badge">2M Context</span>
+            </div>
+            <div class="integration-card">
+                <span class="integration-name">AWS Bedrock</span>
+                <span class="integration-badge">Enterprise</span>
+            </div>
+            <div class="integration-card">
+                <span class="integration-name">Azure OpenAI</span>
+                <span class="integration-badge">Enterprise</span>
+            </div>
+            <div class="integration-card">
+                <span class="integration-name">OpenAI GPT-4</span>
+                <span class="integration-badge">Popular</span>
+            </div>
+            <div class="integration-card">
+                <span class="integration-name">Google VertexAI</span>
+                <span class="integration-badge">Cloud</span>
+            </div>
+            <div class="integration-card">
+                <span class="integration-name">Groq</span>
+                <span class="integration-badge">Fast</span>
+            </div>
+            <div class="integration-card">
+                <span class="integration-name">Perplexity</span>
+                <span class="integration-badge">Research</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Advanced Section -->
+    <section id="advanced" class="section-mobile">
+        <div class="section-header-mobile">
+            <h2 class="section-title-mobile">Advanced Features</h2>
+            <p class="section-subtitle-mobile">Enterprise-grade capabilities</p>
+        </div>
+        <div class="advanced-list-mobile">
+            <div class="advanced-item">
+                <span class="advanced-icon">🔄</span>
+                <div class="advanced-content">
+                    <h4>Intelligent Workflows</h4>
+                    <p>Automated planning, building, testing, and deployment</p>
+                </div>
+            </div>
+            <div class="advanced-item">
+                <span class="advanced-icon">💾</span>
+                <div class="advanced-content">
+                    <h4>Work Preservation</h4>
+                    <p>Automatic checkpointing and rollback capabilities</p>
+                </div>
+            </div>
+            <div class="advanced-item">
+                <span class="advanced-icon">🎯</span>
+                <div class="advanced-content">
+                    <h4>Task Management</h4>
+                    <p>Intelligent task division with dependency tracking</p>
+                </div>
+            </div>
+            <div class="advanced-item">
+                <span class="advanced-icon">🔌</span>
+                <div class="advanced-content">
+                    <h4>MCP Protocol</h4>
+                    <p>Full Model Context Protocol implementation</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- E2E Testing Section -->
+    <section id="e2e-testing" class="section-mobile">
+        <div class="section-header-mobile">
+            <h2 class="section-title-mobile">End-to-End Testing</h2>
+            <p class="section-subtitle-mobile">AI-powered quality assurance</p>
+        </div>
+        <div class="testing-features-mobile">
+            <div class="testing-card">
+                <h4>🤖 AI Test Generation</h4>
+                <p>Automatically generate comprehensive test suites</p>
+            </div>
+            <div class="testing-card">
+                <h4>⚡ Automated Execution</h4>
+                <p>Run tests continuously across all environments</p>
+            </div>
+            <div class="testing-card">
+                <h4>🐛 Bug Detection</h4>
+                <p>Intelligent detection and root cause analysis</p>
+            </div>
+            <div class="testing-card">
+                <h4>📊 Quality Monitoring</h4>
+                <p>Real-time quality metrics and reporting</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Platforms Section -->
+    <section id="platforms" class="section-mobile">
+        <div class="section-header-mobile">
+            <h2 class="section-title-mobile">Multi-Platform Support</h2>
+            <p class="section-subtitle-mobile">Available everywhere</p>
+        </div>
+        <div class="platforms-grid-mobile">
+            <div class="platform-card">
+                <span class="platform-icon">🖥️</span>
+                <span class="platform-name">Desktop</span>
+            </div>
+            <div class="platform-card">
+                <span class="platform-icon">🌐</span>
+                <span class="platform-name">Web</span>
+            </div>
+            <div class="platform-card">
+                <span class="platform-icon">📱</span>
+                <span class="platform-name">Mobile</span>
+            </div>
+            <div class="platform-card">
+                <span class="platform-icon">⌨️</span>
+                <span class="platform-name">CLI</span>
+            </div>
+            <div class="platform-card">
+                <span class="platform-icon">🍎</span>
+                <span class="platform-name">iOS</span>
+            </div>
+            <div class="platform-card">
+                <span class="platform-icon">🤖</span>
+                <span class="platform-name">Android</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Courses Section -->
+    <section id="courses" class="section-mobile">
+        <div class="section-header-mobile">
+            <h2 class="section-title-mobile">Learning Resources</h2>
+            <p class="section-subtitle-mobile">Master HelixCode</p>
+        </div>
+        <div class="courses-list-mobile">
+            <a href="../courses/getting-started.html" class="course-card">
+                <span class="course-icon">🚀</span>
+                <div class="course-content">
+                    <h4>Getting Started</h4>
+                    <p>Quick start guide for new users</p>
+                </div>
+            </a>
+            <a href="../courses/advanced-workflows.html" class="course-card">
+                <span class="course-icon">⚡</span>
+                <div class="course-content">
+                    <h4>Advanced Workflows</h4>
+                    <p>Master complex development workflows</p>
+                </div>
+            </a>
+            <a href="../courses/enterprise-deployment.html" class="course-card">
+                <span class="course-icon">🏢</span>
+                <div class="course-content">
+                    <h4>Enterprise Deployment</h4>
+                    <p>Deploy at enterprise scale</p>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <!-- Download Section -->
+    <section id="download" class="section-mobile download-section-mobile">
+        <div class="download-content-mobile">
+            <h2 class="download-title-mobile">Get Started Today</h2>
+            <p class="download-description-mobile">Download HelixCode and revolutionize your development workflow</p>
+            <div class="download-buttons-mobile">
+                <button class="btn btn-download-mobile">
+                    🚀 Download for Mobile
+                </button>
+                <button class="btn btn-outline-mobile" onclick="window.open('../manual/index.html', '_blank')">
+                    📚 View Documentation
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer-mobile">
+        <div class="footer-content-mobile">
+            <div class="footer-logo-mobile">
+                <img src="../assets/logo.png" alt="HelixCode Logo" class="footer-logo-img">
+                <span class="footer-logo-text">HelixCode</span>
+            </div>
+            <p class="footer-description">Enterprise AI Development Platform</p>
+            <div class="footer-links-mobile">
+                <a href="../manual/index.html">Documentation</a>
+                <a href="https://github.com/helixcode">GitHub</a>
+                <a href="#hero">Back to Top</a>
+            </div>
+            <p class="footer-copyright">© 2024 HelixCode. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button class="scroll-to-top-mobile" id="scrollToTop" aria-label="Scroll to top">
+        ↑
+    </button>
+
+    <!-- Toast Container -->
+    <div id="toastContainer" class="toast-container-mobile"></div>
+
+    <!-- Mobile JavaScript -->
+    <script src="js/mobile.js"></script>
+</body>
+</html>

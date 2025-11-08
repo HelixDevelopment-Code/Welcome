@@ -1,0 +1,462 @@
+/* HelixCode Mobile - Component Styles */
+
+/* Feature Cards Mobile */
+.features-mobile {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.feature-card-mobile {
+    background-color: var(--bg-secondary);
+    border-radius: 1rem;
+    padding: 1.5rem;
+    box-shadow: var(--shadow-md);
+    transition: all 0.3s ease;
+}
+
+.feature-card-mobile:active {
+    transform: scale(0.98);
+}
+
+.feature-icon-mobile {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.feature-title-mobile {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+    color: var(--text-primary);
+}
+
+.feature-description-mobile {
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    color: var(--text-secondary);
+    margin-bottom: 1rem;
+}
+
+.expand-btn {
+    background: var(--accent-gradient);
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    cursor: pointer;
+    width: 100%;
+    font-size: 0.9375rem;
+    transition: all 0.3s ease;
+}
+
+.expand-btn:active {
+    transform: scale(0.98);
+}
+
+.feature-details {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+}
+
+.feature-details.expanded {
+    max-height: 500px;
+    margin-top: 1rem;
+}
+
+.feature-details ul {
+    list-style: none;
+    padding: 0;
+}
+
+.feature-details li {
+    padding: 0.75rem;
+    background-color: var(--bg-tertiary);
+    border-radius: 0.5rem;
+    margin-bottom: 0.5rem;
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+}
+
+.feature-details li:last-child {
+    margin-bottom: 0;
+}
+
+/* Integrations Grid Mobile */
+.integrations-grid-mobile {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+}
+
+.integration-card {
+    background-color: var(--bg-secondary);
+    border-radius: 0.75rem;
+    padding: 1rem;
+    box-shadow: var(--shadow-sm);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.integration-card:active {
+    transform: scale(0.95);
+    box-shadow: var(--shadow-md);
+}
+
+.integration-name {
+    font-size: 0.9375rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+}
+
+.integration-badge {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    background: var(--accent-gradient);
+    color: white;
+    border-radius: 1rem;
+    font-size: 0.75rem;
+    font-weight: 500;
+}
+
+/* Advanced List Mobile */
+.advanced-list-mobile {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.advanced-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    background-color: var(--bg-secondary);
+    padding: 1.25rem;
+    border-radius: 0.75rem;
+    box-shadow: var(--shadow-sm);
+    transition: all 0.3s ease;
+}
+
+.advanced-item:active {
+    transform: scale(0.98);
+}
+
+.advanced-icon {
+    font-size: 2rem;
+    flex-shrink: 0;
+}
+
+.advanced-content h4 {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 0.25rem;
+}
+
+.advanced-content p {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+}
+
+/* Testing Features Mobile */
+.testing-features-mobile {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+}
+
+.testing-card {
+    background-color: var(--bg-secondary);
+    padding: 1.25rem;
+    border-radius: 0.75rem;
+    box-shadow: var(--shadow-sm);
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.testing-card:active {
+    transform: scale(0.95);
+}
+
+.testing-card h4 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+}
+
+.testing-card p {
+    font-size: 0.8125rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+}
+
+/* Platforms Grid Mobile */
+.platforms-grid-mobile {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+}
+
+.platform-card {
+    background-color: var(--bg-secondary);
+    padding: 1.25rem 1rem;
+    border-radius: 0.75rem;
+    box-shadow: var(--shadow-sm);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.platform-card:active {
+    transform: scale(0.95);
+    box-shadow: var(--shadow-md);
+}
+
+.platform-icon {
+    font-size: 2rem;
+}
+
+.platform-name {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+/* Courses List Mobile */
+.courses-list-mobile {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.course-card {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background-color: var(--bg-secondary);
+    padding: 1.25rem;
+    border-radius: 0.75rem;
+    box-shadow: var(--shadow-sm);
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.course-card:active {
+    transform: scale(0.98);
+    box-shadow: var(--shadow-md);
+}
+
+.course-icon {
+    font-size: 2rem;
+    flex-shrink: 0;
+}
+
+.course-content h4 {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 0.25rem;
+}
+
+.course-content p {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+}
+
+/* Download Section Mobile */
+.download-section-mobile {
+    background: var(--accent-gradient);
+    color: white;
+    text-align: center;
+}
+
+.download-content-mobile {
+    max-width: 480px;
+    margin: 0 auto;
+}
+
+.download-title-mobile {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.download-description-mobile {
+    font-size: 1.125rem;
+    margin-bottom: 2rem;
+    opacity: 0.95;
+}
+
+.download-buttons-mobile {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.btn-download-mobile {
+    background: white;
+    color: var(--accent-primary);
+    padding: 1.125rem;
+    font-size: 1.0625rem;
+}
+
+.btn-outline-mobile {
+    background: transparent;
+    color: white;
+    border: 2px solid white;
+    padding: 1.125rem;
+    font-size: 1.0625rem;
+}
+
+.btn-outline-mobile:active {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* Footer Mobile */
+.footer-mobile {
+    background-color: var(--bg-secondary);
+    padding: 2rem 1rem;
+    border-top: 1px solid var(--border-color);
+}
+
+.footer-content-mobile {
+    max-width: 480px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.footer-logo-mobile {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+}
+
+.footer-logo-img {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+}
+
+.footer-logo-text {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+.footer-description {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+}
+
+.footer-links-mobile {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    margin-bottom: 1.5rem;
+}
+
+.footer-links-mobile a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 0.875rem;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.footer-links-mobile a:active {
+    color: var(--accent-primary);
+}
+
+.footer-copyright {
+    font-size: 0.8125rem;
+    color: var(--text-tertiary);
+}
+
+/* Responsive adjustments */
+@media (min-width: 480px) {
+    .integrations-grid-mobile {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .testing-features-mobile {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 640px) {
+    .integrations-grid-mobile {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .platforms-grid-mobile {
+        grid-template-columns: repeat(6, 1fr);
+    }
+
+    .hero-actions-mobile {
+        flex-direction: row;
+    }
+
+    .download-buttons-mobile {
+        flex-direction: row;
+    }
+}
+
+@media (min-width: 768px) {
+    .features-mobile {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .testing-features-mobile {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+/* Touch feedback */
+@media (hover: none) and (pointer: coarse) {
+    /* Enhanced touch targets for mobile */
+    .nav-link,
+    .btn,
+    .expand-btn {
+        min-height: 44px;
+    }
+
+    /* Remove hover states, only use active states */
+    *:hover {
+        /* No hover on touch devices */
+    }
+}
+
+/* Smooth scrolling animation */
+@media (prefers-reduced-motion: no-preference) {
+    html {
+        scroll-behavior: smooth;
+    }
+}
+
+/* Respect user's motion preferences */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}

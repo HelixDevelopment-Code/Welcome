@@ -16,6 +16,10 @@ NC='\033[0m' # No Color
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 cd "$SCRIPT_DIR"
 
+# Container configuration
+CONTAINER_NAME="helixcode-website"
+IMAGE_NAME="helixcode-website"
+
 # Function to log messages
 log() {
     echo -e "${GREEN}[$(date +'%Y-%m-%d %H:%M:%S')]${NC} $1"
@@ -33,9 +37,17 @@ info() {
     echo -e "${BLUE}[$(date +'%Y-%m-%d %H:%M:%S')] INFO:${NC} $1"
 }
 
+# Function to check if Podman is installed
+check_podman() {
+    if ! command -v podman >/dev/null 2>&1; then
+        error "Podman is not installed!"
+        exit 1
+    fi
+}
+
 # Function to check if website is running
 is_website_running() {
-    if docker-compose ps | grep -q "Up"; then
+    if podman ps --format "{{.Names}}" | grep -q "^${CONTAINER_NAME}$"; then
         return 0
     else
         return 1
@@ -51,49 +63,99 @@ get_current_port() {
     fi
 }
 
-# Main script
-main() {
-    log "Stopping HelixCode Website..."
-    
-    # Check if website is running
-    if ! is_website_running; then
-        warn "Website is not currently running"
-        exit 0
-    fi
-    
-    # Get current port for display
-    local current_port=$(get_current_port)
-    
-    # Stop the containers
-    log "Stopping Docker containers..."
-    if docker-compose down; then
-        log "Docker containers stopped successfully"
+# Function to stop container
+stop_container() {
+    log "Stopping container..."
+    if podman stop $CONTAINER_NAME 2>/dev/null; then
+        log "Container stopped successfully"
     else
-        error "Failed to stop Docker containers"
-        docker-compose logs
-        exit 1
+        warn "Container may have already been stopped"
     fi
-    
-    # Clean up any dangling containers/networks
+}
+
+# Function to remove container
+remove_container() {
+    log "Removing container..."
+    if podman rm $CONTAINER_NAME 2>/dev/null; then
+        log "Container removed successfully"
+    else
+        warn "Container may have already been removed"
+    fi
+}
+
+# Function to cleanup resources
+cleanup_resources() {
     log "Cleaning up resources..."
-    
-    # Remove dangling containers
-    local dangling_containers=$(docker ps -aq -f status=exited -f name=helixcode-website)
+
+    # Remove dangling containers with the same name
+    local dangling_containers=$(podman ps -aq --filter name=$CONTAINER_NAME 2>/dev/null)
     if [ -n "$dangling_containers" ]; then
-        docker rm $dangling_containers 2>/dev/null || true
+        info "Removing dangling containers..."
+        podman rm -f $dangling_containers 2>/dev/null || true
     fi
-    
-    # Remove dangling networks
-    local dangling_networks=$(docker network ls -q -f name=helixcode-website)
-    if [ -n "$dangling_networks" ]; then
-        docker network rm $dangling_networks 2>/dev/null || true
-    fi
-    
+
+    # Optionally remove the image (commented out by default to speed up next start)
+    # Uncomment if you want to remove the image as well
+    # if podman images --format "{{.Repository}}" | grep -q "^${IMAGE_NAME}$"; then
+    #     info "Removing image..."
+    #     podman rmi $IMAGE_NAME 2>/dev/null || true
+    # fi
+
     # Remove port file
     if [ -f .website-port ]; then
         rm .website-port
     fi
-    
+
+    # Remove temporary files
+    if [ -f .website-port.tmp ]; then
+        rm -f .website-port.tmp
+    fi
+}
+
+# Function to prune unused resources
+prune_resources() {
+    info "Pruning unused Podman resources..."
+
+    # Remove unused containers
+    podman container prune -f 2>/dev/null || true
+
+    # Remove unused images (optional - commented out)
+    # podman image prune -f 2>/dev/null || true
+}
+
+# Main script
+main() {
+    log "Stopping HelixCode Website..."
+    echo
+
+    # Check if Podman is installed
+    check_podman
+
+    # Check if website is running
+    if ! is_website_running; then
+        warn "Website is not currently running"
+        cleanup_resources
+        echo
+        info "To start the website, run: ./start-website.sh"
+        echo
+        exit 0
+    fi
+
+    # Get current port for display
+    local current_port=$(get_current_port)
+
+    # Stop the container
+    stop_container
+
+    # Remove the container
+    remove_container
+
+    # Clean up resources
+    cleanup_resources
+
+    # Prune unused resources
+    prune_resources
+
     # Display success message
     echo
     log "========================================"
@@ -108,14 +170,14 @@ main() {
 }
 
 # Handle cleanup on script exit
-cleanup() {
+cleanup_on_exit() {
     # Remove any temporary files
     if [ -f .website-port.tmp ]; then
         rm -f .website-port.tmp
     fi
 }
 
-trap cleanup EXIT
+trap cleanup_on_exit EXIT
 
 # Run main function
 main "$@"

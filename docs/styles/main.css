@@ -286,7 +286,7 @@ body {
   margin: 0 auto;
   padding: 0 2rem;
   width: 100%;
-  max-width: 1200px; /* Add proper container constraint */
+  max-width: 1200px;
 }
 
 .hero-title {
@@ -604,7 +604,7 @@ body {
 
 .features-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); /* At least two columns */
+  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr)); /* At least two columns, minimum 500px */
   gap: 2rem;
   margin-top: 3rem;
 }
@@ -746,7 +746,7 @@ body {
 
 .platforms-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); /* At least two columns */
+  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr)); /* At least two columns, minimum 500px */
   gap: 2rem;
   margin-top: 3rem;
 }
@@ -870,9 +870,11 @@ body {
 
 .footer-content {
   display: grid;
-  grid-template-columns: 2fr 1px 1fr 1px 1fr 1px 1fr; /* 4 columns with separators */
-  gap: 2rem;
-  margin-bottom: 3rem;
+  grid-template-columns: 1fr 1px 1fr 1px 1fr 1px 1fr; /* 4 columns with white separators */
+  gap: 0; /* No gap, let separators handle spacing */
+  margin: 0 auto 3rem;
+  padding: 0 2rem;
+  max-width: 1200px;
   align-items: start;
 }
 
@@ -891,8 +893,8 @@ body {
 
 .footer-separator {
   width: 1px;
-  height: 200px; /* Adjust height as needed */
-  background-color: rgba(255, 255, 255, 0.2); /* Thin white separator */
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.3); /* More visible white separator */
   align-self: stretch;
   justify-self: center;
 }
@@ -1081,7 +1083,7 @@ body {
     gap: 2rem;
     padding: 0 1rem;
     width: 100%;
-    max-width: none;
+    max-width: 1200px;
   }
   
   .hero-actions {

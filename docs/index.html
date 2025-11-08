@@ -8,11 +8,29 @@
     <link rel="stylesheet" href="styles/main.css">
     <link rel="stylesheet" href="styles/performance-fractal.css">
     <link rel="stylesheet" href="styles/enhanced-components.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon-180.png">
+    <link rel="shortcut icon" href="assets/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon-180.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- Scroll-to-Top Button - Green Brand Color -->
+    <button class="scroll-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" aria-label="Scroll to top">
+        ⬆️
+    </button>
+    <!-- Scroll-to-Top Button -->
+    <button class="scroll-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" style="display: none !important; position: fixed !important; bottom: 2rem !important; right: 2rem !important; width: 50px !important; height: 50px !important; background: #0ea5e9 !important; color: white !important; border: none !important; border-radius: 50% !important; font-size: 1.2rem !important; cursor: pointer !important; z-index: 1000 !important; align-items: center !important; justify-content: center !important; box-shadow: 0 4px 12px rgba(14, 165, 233, 0.4) !important; transition: all 0.3s ease !important;">
+        ⬆️
+    </button>
     <!-- Toast Container -->
     <div id="toastContainer" class="toast-container"></div>
 
@@ -28,15 +46,21 @@
     <nav class="navbar" id="navbar">
         <div class="nav-container">
             <div class="nav-content">
-                <div class="nav-menu">
-                    <a href="#hero" class="nav-link">Home</a>
-                    <a href="#features" class="nav-link">Features</a>
-                    <a href="#integrations" class="nav-link">Integrations</a>
-                    <a href="#courses" class="nav-link">Courses</a>
-                    <a href="#advanced" class="nav-link">Advanced</a>
-                    <a href="#platforms" class="nav-link">Platforms</a>
-                    <a href="#e2e-testing" class="nav-link">E2E Testing</a>
-                    <a href="#download" class="nav-link">Get Started</a>
+                <!-- Mobile Menu Toggle - Hidden on Desktop -->
+                <button class="mobile-menu-toggle" style="display: none !important; background: none !important; border: none !important; font-size: 1.5rem !important; cursor: pointer !important; color: var(--text-primary) !important; position: absolute !important; left: 1rem !important; top: 50% !important; transform: translateY(-50%) !important; z-index: 1000 !important; padding: 0.5rem !important; border-radius: 0.5rem !important;">
+                    ☰ Menu
+                </button>
+                
+                <!-- Navigation Menu - Proper UL structure, NO Bullets -->
+                <ul class="nav-menu" style="display: flex !important; flex-direction: row !important; justify-content: center !important; align-items: center !important; gap: 2rem !important; list-style: none !important; margin: 0 !important; padding: 0 !important; flex: 1 !important;">
+                    <li class="nav-item"><a href="#hero" style="color: var(--text-primary) !important; text-decoration: none !important; font-weight: 500 !important; font-size: 1rem !important; padding: 0.5rem 1rem !important; border-radius: 0.5rem !important; transition: all 0.3s ease !important; display: inline-block !important;">Home</a></li>
+                    <li class="nav-item"><a href="#features" style="color: var(--text-primary) !important; text-decoration: none !important; font-weight: 500 !important; font-size: 1rem !important; padding: 0.5rem 1rem !important; border-radius: 0.5rem !important; transition: all 0.3s ease !important; display: inline-block !important;">Features</a></li>
+                    <li class="nav-item"><a href="#integrations" style="color: var(--text-primary) !important; text-decoration: none !important; font-weight: 500 !important; font-size: 1rem !important; padding: 0.5rem 1rem !important; border-radius: 0.5rem !important; transition: all 0.3s ease !important; display: inline-block !important;">Integrations</a></li>
+                    <li class="nav-item"><a href="#courses" style="color: var(--text-primary) !important; text-decoration: none !important; font-weight: 500 !important; font-size: 1rem !important; padding: 0.5rem 1rem !important; border-radius: 0.5rem !important; transition: all 0.3s ease !important; display: inline-block !important;">Courses</a></li>
+                    <li class="nav-item"><a href="#advanced" style="color: var(--text-primary) !important; text-decoration: none !important; font-weight: 500 !important; font-size: 1rem !important; padding: 0.5rem 1rem !important; border-radius: 0.5rem !important; transition: all 0.3s ease !important; display: inline-block !important;">Advanced</a></li>
+                    <li class="nav-item"><a href="#platforms" style="color: var(--text-primary) !important; text-decoration: none !important; font-weight: 500 !important; font-size: 1rem !important; padding: 0.5rem 1rem !important; border-radius: 0.5rem !important; transition: all 0.3s ease !important; display: inline-block !important;">Platforms</a></li>
+                    <li class="nav-item"><a href="#e2e-testing" style="color: var(--text-primary) !important; text-decoration: none !important; font-weight: 500 !important; font-size: 1rem !important; padding: 0.5rem 1rem !important; border-radius: 0.5rem !important; transition: all 0.3s ease !important; display: inline-block !important;">E2E Testing</a></li>
+                    <li class="nav-item"><a href="#download" style="color: var(--text-primary) !important; text-decoration: none !important; font-weight: 500 !important; font-size: 1rem !important; padding: 0.5rem 1rem !important; border-radius: 0.5rem !important; transition: all 0.3s ease !important; display: inline-block !important;">Get Started</a></li>
                     <!-- Theme Toggle as last menu item -->
                     <div class="nav-theme-toggle">
                         <button id="themeToggle" class="theme-toggle-btn" aria-label="Toggle theme">
@@ -933,55 +957,53 @@ go run cmd/main.go run --all
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <div class="footer-content">
-                <div class="footer-brand">
-                    <div class="footer-logo">
-                        <img src="assets/logo.png" alt="HelixCode Logo" class="logo-img">
-                        <span class="logo-text">HelixCode</span>
+            <div class="footer-content" style="display: grid !important; grid-template-columns: 1fr 1px 1fr 1px 1fr !important; gap: 3rem !important; max-width: 1200px !important; margin: 0 auto !important; padding: 0 2rem !important; align-items: start !important;">
+                <!-- Column 1: Brand -->
+                <div class="footer-brand" style="grid-column: 1 !important; max-width: 300px !important; text-align: left !important;">
+                    <div class="footer-logo" style="display: flex !important; align-items: center !important; gap: 0.75rem !important; margin-bottom: 1rem !important;">
+                        <img src="assets/logo.png" alt="HelixCode Logo" class="logo-img" style="width: 40px !important; height: 40px !important; object-fit: contain !important;">
+                        <span class="logo-text" style="font-size: 1.5rem !important; font-weight: bold !important; color: var(--text-primary) !important;">HelixCode</span>
                     </div>
                     <p class="footer-description">
                         The world's most advanced enterprise AI development platform with 18+ AI providers, 2M token context, and zero-tolerance security.
                     </p>
                 </div>
-                <div class="footer-separator"></div>
-                <div class="footer-links">
-                    <div class="footer-column">
-                        <h4>Product</h4>
-                        <a href="#features">Features</a>
-                        <a href="#platforms">Platforms</a>
-                        <a href="#download">Download</a>
-                        <a href="https://github.com/HelixDevelopment/HelixCode" target="_blank">GitHub</a>
-                    </div>
-                    <div class="footer-separator"></div>
-                    <div class="footer-column">
-                        <h4>Resources</h4>
-                        <a href="https://github.com/HelixDevelopment/HelixCode/blob/main/docs/USER_GUIDE.md" target="_blank">Documentation</a>
-                        <a href="https://github.com/HelixDevelopment/HelixCode/blob/main/docs/API_DOCUMENTATION.md" target="_blank">API Reference</a>
-                        <a href="https://github.com/HelixDevelopment/HelixCode/blob/main/DOCKER_DEPLOYMENT.md" target="_blank">Docker Guide</a>
-                        <a href="https://github.com/HelixDevelopment/HelixCode/tree/main/examples" target="_blank">Examples</a>
-                        <a href="https://github.com/HelixDevelopment/HelixCode/issues" target="_blank">Issues</a>
-                    </div>
-                    <div class="footer-column">
-                        <h4>Specialized Platforms</h4>
-                        <a href="https://github.com/HelixDevelopment/HelixCode/blob/main/docs/AURORA_OS_GUIDE.md" target="_blank">Aurora OS Guide</a>
-                        <a href="https://github.com/HelixDevelopment/HelixCode/blob/main/docs/HARMONY_OS_GUIDE.md" target="_blank">Harmony OS Guide</a>
-                        <a href="https://github.com/HelixDevelopment/HelixCode/blob/main/docs/SPECIALIZED_PLATFORMS_QUICKSTART.md" target="_blank">Quick Start</a>
-                        <a href="https://github.com/HelixDevelopment/HelixCode/blob/main/docs/SPECIALIZED_PLATFORMS_DEPLOYMENT.md" target="_blank">Deployment Guide</a>
-                    </div>
-                    <div class="footer-column">
-                        <h4>Testing & QA</h4>
-                        <a href="https://github.com/HelixDevelopment/HelixCode/blob/main/tests/e2e/README.md" target="_blank">E2E Testing Guide</a>
-                        <a href="https://github.com/HelixDevelopment/HelixCode/blob/main/tests/e2e/E2E_TESTING_FRAMEWORK.md" target="_blank">Testing Framework</a>
-                        <a href="https://github.com/HelixDevelopment/HelixCode/blob/main/tests/e2e/INTEGRATION_GUIDE.md" target="_blank">Integration Guide</a>
-                        <a href="https://github.com/HelixDevelopment/HelixCode/blob/main/tests/e2e/E2E_TESTING_IMPLEMENTATION_PLAN.md" target="_blank">Implementation Plan</a>
-                    </div>
-                    <div class="footer-column">
-                        <h4>Community</h4>
-                        <a href="https://github.com/HelixDevelopment/HelixCode" target="_blank">GitHub Repo</a>
-                        <a href="https://github.com/HelixDevelopment/HelixCode/blob/main/CONTRIBUTING.md" target="_blank">Contribute</a>
-                        <a href="https://github.com/HelixDevelopment/HelixCode/discussions" target="_blank">Discussions</a>
-                        <a href="https://github.com/HelixDevelopment/HelixCode/releases" target="_blank">Releases</a>
-                    </div>
+                
+                <!-- Separator -->
+                <div class="footer-separator" style="grid-column: 2 !important; width: 1px !important; height: 200px !important; background-color: rgba(255, 255, 255, 0.5) !important; align-self: stretch !important; justify-self: center !important;"></div>
+                
+                <!-- Column 2: Resources -->
+                <div class="footer-column" style="grid-column: 3 !important; display: flex !important; flex-direction: column !important; gap: 1rem !important;">
+                    <h4>Resources</h4>
+                    <a href="https://github.com/HelixDevelopment/HelixCode/blob/main/docs/USER_GUIDE.md" target="_blank">Documentation</a>
+                    <a href="https://github.com/HelixDevelopment/HelixCode/blob/main/docs/API_DOCUMENTATION.md" target="_blank">API Reference</a>
+                    <a href="https://github.com/HelixDevelopment/HelixCode/blob/main/DOCKER_DEPLOYMENT.md" target="_blank">Docker Guide</a>
+                    <a href="https://github.com/HelixDevelopment/HelixCode/tree/main/examples" target="_blank">Examples</a>
+                    <a href="https://github.com/HelixDevelopment/HelixCode/issues" target="_blank">Issues</a>
+                </div>
+                
+                <!-- Separator -->
+                <div class="footer-separator" style="grid-column: 4 !important; width: 1px !important; height: 200px !important; background-color: rgba(255, 255, 255, 0.5) !important; align-self: stretch !important; justify-self: center !important;"></div>
+                
+                <!-- Column 3: Specialized Platforms -->
+                <div class="footer-column" style="grid-column: 5 !important; display: flex !important; flex-direction: column !important; gap: 1rem !important;">
+                    <h4>Specialized Platforms</h4>
+                    <a href="https://github.com/HelixDevelopment/HelixCode/blob/main/docs/AURORA_OS_GUIDE.md" target="_blank">Aurora OS Guide</a>
+                    <a href="https://github.com/HelixDevelopment/HelixCode/blob/main/docs/HARMONY_OS_GUIDE.md" target="_blank">Harmony OS Guide</a>
+                    <a href="https://github.com/HelixDevelopment/HelixCode/blob/main/docs/SPECIALIZED_PLATFORMS_QUICKSTART.md" target="_blank">Quick Start</a>
+                    <a href="https://github.com/HelixDevelopment/HelixCode/blob/main/docs/SPECIALIZED_PLATFORMS_DEPLOYMENT.md" target="_blank">Deployment Guide</a>
+                </div>
+                
+                <!-- Separator -->
+                <div class="footer-separator" style="grid-column: 6 !important; width: 1px !important; height: 200px !important; background-color: rgba(255, 255, 255, 0.5) !important; align-self: stretch !important; justify-self: center !important;"></div>
+                
+                <!-- Column 4: Community -->
+                <div class="footer-column" style="grid-column: 7 !important; display: flex !important; flex-direction: column !important; gap: 1rem !important;">
+                    <h4>Community</h4>
+                    <a href="https://github.com/HelixDevelopment/HelixCode" target="_blank">GitHub Repo</a>
+                    <a href="https://github.com/HelixDevelopment/HelixCode/blob/main/CONTRIBUTING.md" target="_blank">Contribute</a>
+                    <a href="https://github.com/HelixDevelopment/HelixCode/discussions" target="_blank">Discussions</a>
+                    <a href="https://github.com/HelixDevelopment/HelixCode/releases" target="_blank">Releases</a>
                 </div>
             </div>
             <div class="footer-bottom">
@@ -989,6 +1011,24 @@ go run cmd/main.go run --all
             </div>
         </div>
     </footer>
+
+    <!-- Scroll-to-Top Button - Green Brand Color -->
+    <button class="scroll-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" aria-label="Scroll to top">
+        ⬆️
+    </button>
+
+    <!-- JavaScript for Scroll-to-Top Button -->
+    <script>
+        // Show/hide scroll-to-top button based on scroll position
+        window.addEventListener('scroll', function() {
+            const scrollButton = document.querySelector('.scroll-to-top');
+            if (window.pageYOffset > 300) {
+                scrollButton.classList.add('visible');
+            } else {
+                scrollButton.classList.remove('visible');
+            }
+        });
+    </script>
 
     <script src="js/main.js"></script>
     <script src="js/performance-fractal.js"></script>

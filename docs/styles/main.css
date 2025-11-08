@@ -179,20 +179,11 @@ body {
   background: var(--accent-1); /* Light green from logo */
 }
 
-/* Theme Toggle - Moved below header */
-.theme-toggle-header {
+/* Theme Toggle as Nav Item */
+.nav-theme-toggle {
   display: flex;
-  justify-content: flex-end;
-  padding: 1.5rem 2rem;
-  border-bottom: 1px solid var(--border-light);
-  background: var(--bg-primary);
-  backdrop-filter: blur(10px);
-  position: fixed;
-  top: 80px; /* Position below navbar height */
-  right: 0;
-  left: 0;
-  z-index: 99;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  align-items: center;
+  margin-left: 1rem;
 }
 
 .theme-toggle {
@@ -998,15 +989,15 @@ body {
     display: flex;
   }
   
-  .theme-toggle-header {
-    padding: 0.5rem 1rem;
-    justify-content: center;
+  .nav-theme-toggle {
+    display: none;
   }
   
   .theme-toggle {
-    position: fixed;
+    position: relative;
     top: auto;
-    right: 1rem;
+    right: auto;
+    z-index: 1000;
   }
   
   .hero-content {

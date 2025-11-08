@@ -187,8 +187,10 @@ body {
   border-bottom: 1px solid var(--border-light);
   background: var(--bg-primary);
   backdrop-filter: blur(10px);
-  position: sticky;
+  position: fixed;
   top: 0;
+  right: 0;
+  left: 0;
   z-index: 99;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
@@ -230,6 +232,7 @@ body {
   overflow: hidden;
   padding-top: 224px; /* Reduced from 280px by 20% to 224px */
   padding-bottom: 3rem; /* Add bottom padding to prevent buttons from touching edge */
+  margin-top: 80px; /* Add space for theme toggle header below navbar */
   background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
 }
 

@@ -194,9 +194,9 @@ body {
 }
 
 .theme-toggle {
-  position: fixed;
+  position: relative;
   top: auto;
-  right: 2rem;
+  right: auto;
   z-index: 1000;
 }
 

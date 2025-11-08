@@ -48,7 +48,7 @@ body {
   margin: 0 auto;
   padding: 0 2rem;
   width: 100%;
-  max-width: none;
+  max-width: 1200px; /* Re-add proper container constraint */
 }
 
 /* Navigation - Now Sticky Below Logo */
@@ -84,6 +84,7 @@ body {
   align-items: center;
   justify-content: center;
   width: 100%;
+  max-width: 1200px; /* Re-add proper container constraint */
   margin: 0 auto;
   padding: 1rem 2rem;
   gap: 2rem;
@@ -285,7 +286,7 @@ body {
   margin: 0 auto;
   padding: 0 2rem;
   width: 100%;
-  max-width: none;
+  max-width: 1200px; /* Add proper container constraint */
 }
 
 .hero-title {

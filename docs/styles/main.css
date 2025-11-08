@@ -47,14 +47,16 @@ body {
 .container {
   margin: 0 auto;
   padding: 0 2rem;
+  width: 100%;
+  max-width: none;
 }
 
-/* Navigation - Now Visible Below Logo */
+/* Navigation - Now Sticky Below Logo */
 .navbar {
-  position: relative;
-  top: auto;
-  left: auto;
-  right: auto;
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
   background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(20px);
   border-bottom: 1px solid var(--border-light);
@@ -94,7 +96,7 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 0.5rem; /* Reduced vertical space */
+  gap: 0.25rem; /* Reduced vertical space by 50% (from 0.5rem) */
   padding: 2rem 2rem 0.5rem 2rem;
   width: 100%;
   background: var(--bg-primary);
@@ -276,11 +278,10 @@ body {
 }
 
 .hero-content {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Two columns on desktop */
   gap: 4rem;
-  align-items: center;
-  justify-content: center;
+  align-items: start;
   margin: 0 auto;
   padding: 0 2rem;
   width: 100%;
@@ -602,7 +603,7 @@ body {
 
 .features-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); /* At least two columns */
   gap: 2rem;
   margin-top: 3rem;
 }
@@ -744,7 +745,7 @@ body {
 
 .platforms-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); /* At least two columns */
   gap: 2rem;
   margin-top: 3rem;
 }
@@ -985,7 +986,7 @@ body {
   }
   
   .features-grid {
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: 1fr; /* Single column on mobile */
     gap: 1.5rem;
   }
 }
@@ -1073,7 +1074,6 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
     text-align: center;
     gap: 2rem;
     padding: 0 1rem;

@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initExpandableFeatures();
     initSmoothScroll();
     initTouchGestures();
+    initDesktopVersionLink();
 });
 
 // Mobile Menu Toggle
@@ -356,6 +357,20 @@ document.addEventListener('click', function(e) {
         trackEvent('Button', 'Click', buttonText);
     }
 });
+
+// Desktop Version Link
+function initDesktopVersionLink() {
+    const desktopLink = document.getElementById('desktopVersionLink');
+    if (desktopLink) {
+        desktopLink.addEventListener('click', function(e) {
+            e.preventDefault();
+            // Set preference to view desktop version
+            sessionStorage.setItem('preferDesktop', 'true');
+            // Redirect to desktop version
+            window.location.href = '../index.html';
+        });
+    }
+}
 
 // Export functions for global use
 window.toggleExpand = toggleExpand;

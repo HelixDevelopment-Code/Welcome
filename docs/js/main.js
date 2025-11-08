@@ -15,9 +15,15 @@ class ThemeManager {
     }
 
     init() {
+        // Check for saved theme preference
+        const savedTheme = localStorage.getItem('helixcode-theme');
+        if (savedTheme) {
+            this.currentTheme = savedTheme;
+        }
+
         // Set initial theme
         this.setTheme(this.currentTheme);
-        
+
         // Listen for system theme changes
         window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
             if (document.documentElement.getAttribute('data-theme') === 'auto') {
@@ -25,27 +31,55 @@ class ThemeManager {
             }
         });
 
-        // Theme toggle button
+        // Theme toggle button (in navigation)
         const themeToggle = document.getElementById('themeToggle');
         if (themeToggle) {
             themeToggle.addEventListener('click', () => {
                 this.toggleTheme();
             });
         }
+
+        // Floating theme toggle button (top right)
+        const floatingThemeToggle = document.getElementById('floatingThemeToggle');
+        if (floatingThemeToggle) {
+            floatingThemeToggle.addEventListener('click', () => {
+                this.toggleTheme();
+            });
+        }
+
+        // Update theme icons
+        this.updateThemeIcons();
     }
 
     setTheme(theme) {
         this.currentTheme = theme;
         document.documentElement.setAttribute('data-theme', theme);
         localStorage.setItem('helixcode-theme', theme);
+        this.updateThemeIcons();
     }
 
     toggleTheme() {
         const newTheme = this.currentTheme === 'light' ? 'dark' : 'light';
         this.setTheme(newTheme);
-        
+
         // Show theme change toast
         showToast(`Switched to ${newTheme} theme`, 'info');
+    }
+
+    updateThemeIcons() {
+        // Update floating theme toggle icons
+        const sunIcons = document.querySelectorAll('.theme-icon-floating.sun');
+        const moonIcons = document.querySelectorAll('.theme-icon-floating.moon');
+
+        if (this.currentTheme === 'light') {
+            // Show moon icon (to switch to dark)
+            sunIcons.forEach(icon => icon.style.display = 'none');
+            moonIcons.forEach(icon => icon.style.display = 'inline-block');
+        } else {
+            // Show sun icon (to switch to light)
+            sunIcons.forEach(icon => icon.style.display = 'inline-block');
+            moonIcons.forEach(icon => icon.style.display = 'none');
+        }
     }
 }
 
@@ -313,7 +347,7 @@ document.addEventListener('DOMContentLoaded', () => {
     console.log('🚀 HelixCode website initialized successfully!');
 });
 
-// Add ripple effect styles dynamically
+// Add ripple effect styles and floating button hover styles dynamically
 const rippleStyles = `
 .ripple {
     position: absolute;
@@ -329,6 +363,24 @@ const rippleStyles = `
         transform: scale(4);
         opacity: 0;
     }
+}
+
+#floatingThemeToggle:hover {
+    transform: scale(1.1) !important;
+    box-shadow: 0 6px 16px rgba(14, 165, 233, 0.6) !important;
+}
+
+#floatingThemeToggle:active {
+    transform: scale(0.95) !important;
+}
+
+.scroll-to-top:hover {
+    transform: scale(1.1) !important;
+    box-shadow: 0 6px 16px rgba(14, 165, 233, 0.6) !important;
+}
+
+.scroll-to-top:active {
+    transform: scale(0.95) !important;
 }
 `;
 

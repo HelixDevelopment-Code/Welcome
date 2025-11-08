@@ -88,6 +88,20 @@ body {
   gap: 2rem;
 }
 
+/* Logo Header Section - Completely Separate from Navbar */
+.logo-header-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  padding: 2rem 2rem 1rem 2rem;
+  width: 100%;
+  background: var(--bg-primary);
+  position: relative;
+  z-index: 101;
+}
+
 .nav-logo {
   display: flex;
   align-items: center;
@@ -102,6 +116,15 @@ body {
   height: 96px; /* Much bigger logo */
   width: auto;
   filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
+}
+
+.nav-title {
+  font-size: 3rem; /* Much bigger title */
+  font-weight: 700;
+  color: var(--text-primary);
+  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  letter-spacing: -0.02em;
+  text-align: center;
 }
 
 .nav-menu {
@@ -253,11 +276,10 @@ body {
 }
 
 .hero-content {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
+  flex-direction: column;
   gap: 4rem;
   align-items: center;
-  max-width: 1200px;
   margin: 0 auto;
   padding: 0 2rem;
 }

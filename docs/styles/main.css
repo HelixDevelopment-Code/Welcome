@@ -49,12 +49,12 @@ body {
   padding: 0 2rem;
 }
 
-/* Navigation */
+/* Navigation - Now Visible Below Logo */
 .navbar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
+  position: relative;
+  top: auto;
+  left: auto;
+  right: auto;
   background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(20px);
   border-bottom: 1px solid var(--border-light);
@@ -88,14 +88,14 @@ body {
   gap: 2rem;
 }
 
-/* Logo Header Section - Completely Separate from Navbar */
+/* Logo Header Section - Properly Centered and Above Navbar */
 .logo-header-section {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 1.5rem;
-  padding: 2rem 2rem 1rem 2rem;
+  gap: 0.5rem; /* Reduced vertical space */
+  padding: 2rem 2rem 0.5rem 2rem;
   width: 100%;
   background: var(--bg-primary);
   position: relative;
@@ -245,7 +245,7 @@ body {
   overflow: hidden;
   padding-top: 224px; /* Reduced from 280px by 20% to 224px */
   padding-bottom: 3rem; /* Add bottom padding to prevent buttons from touching edge */
-  margin-top: 0; /* Remove margin since theme toggle is now overlay */
+  margin-top: 0;
   background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
 }
 
@@ -280,8 +280,11 @@ body {
   flex-direction: column;
   gap: 4rem;
   align-items: center;
+  justify-content: center;
   margin: 0 auto;
   padding: 0 2rem;
+  width: 100%;
+  max-width: none;
 }
 
 .hero-title {
@@ -1067,10 +1070,15 @@ body {
 }
   
   .hero-content {
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     text-align: center;
     gap: 2rem;
     padding: 0 1rem;
+    width: 100%;
+    max-width: none;
   }
   
   .hero-actions {

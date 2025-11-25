@@ -286,6 +286,222 @@ class CourseDataManager {
                         ]
                     }
                 ]
+            },
+            'phase3-advanced-features': {
+                id: 'phase3-advanced-features',
+                title: 'HelixCode Phase 3 - Advanced AI Development Features',
+                description: 'Master advanced session management, memory systems, persistence, and template workflows',
+                instructor: 'HelixCode Team',
+                duration: '2h 00m',
+                level: 'advanced',
+                chapters: [
+                    {
+                        id: 'p3-ch1-overview',
+                        number: 1,
+                        title: 'Phase 3 Overview',
+                        description: 'Introduction to Phase 3 features and architecture',
+                        duration: '10:00',
+                        videoUrl: 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4',
+                        transcript: [
+                            { time: 0, text: 'Welcome to HelixCode Phase 3! In this course, we\'ll explore the advanced AI development features.' },
+                            { time: 15, text: 'Phase 3 introduces four major systems: Session Management, Memory, Persistence, and Templates.' },
+                            { time: 30, text: 'These systems work together to create a seamless AI development experience.' },
+                            { time: 45, text: 'Let\'s dive into each system and see how they can transform your workflow.' }
+                        ],
+                        resources: [
+                            { name: 'Phase 3 Architecture Overview', url: '#' },
+                            { name: 'Feature Comparison Chart', url: '#' }
+                        ]
+                    },
+                    {
+                        id: 'p3-ch2-getting-started',
+                        number: 2,
+                        title: 'Getting Started with Phase 3',
+                        description: 'Installation, configuration, and first steps',
+                        duration: '10:00',
+                        videoUrl: 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4',
+                        transcript: [
+                            { time: 0, text: 'Let\'s get started with HelixCode Phase 3 features.' },
+                            { time: 15, text: 'First, we\'ll clone the repository and build the project.' },
+                            { time: 30, text: 'Then we\'ll configure the basic settings for sessions, memory, and persistence.' },
+                            { time: 45, text: 'By the end of this video, you\'ll have a working Phase 3 environment.' }
+                        ],
+                        resources: [
+                            { name: 'Quick Start Guide', url: '#' },
+                            { name: 'Configuration Template', url: '#' }
+                        ]
+                    },
+                    {
+                        id: 'p3-ch3-session-fundamentals',
+                        number: 3,
+                        title: 'Session Fundamentals',
+                        description: 'Creating and managing development sessions',
+                        duration: '10:00',
+                        videoUrl: 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4',
+                        transcript: [
+                            { time: 0, text: 'Sessions are the foundation of HelixCode\'s workflow management.' },
+                            { time: 20, text: 'Each session has a mode: planning, building, testing, refactoring, debugging, or deployment.' },
+                            { time: 40, text: 'Sessions track progress, preserve context, and enable seamless transitions.' }
+                        ],
+                        resources: [
+                            { name: 'Session Modes Reference', url: '#' },
+                            { name: 'Code Examples', url: '#' }
+                        ]
+                    },
+                    {
+                        id: 'p3-ch4-advanced-sessions',
+                        number: 4,
+                        title: 'Advanced Session Management',
+                        description: 'Multi-project sessions, export/import, and statistics',
+                        duration: '10:00',
+                        videoUrl: 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4',
+                        transcript: [
+                            { time: 0, text: 'Now let\'s explore advanced session management features.' },
+                            { time: 20, text: 'You can manage sessions across multiple projects with callbacks and events.' },
+                            { time: 40, text: 'Export sessions to JSON for backup and import them on any machine.' }
+                        ],
+                        resources: [
+                            { name: 'Advanced Sessions Guide', url: '#' },
+                            { name: 'Export/Import Examples', url: '#' }
+                        ]
+                    },
+                    {
+                        id: 'p3-ch5-memory-basics',
+                        number: 5,
+                        title: 'Memory System Basics',
+                        description: 'Conversation tracking and context management',
+                        duration: '10:00',
+                        videoUrl: 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4',
+                        transcript: [
+                            { time: 0, text: 'The memory system powers conversation tracking in HelixCode.' },
+                            { time: 20, text: 'It supports multiple message types: system, user, assistant, and tool messages.' },
+                            { time: 40, text: 'Each conversation can be linked to a session for complete context.' }
+                        ],
+                        resources: [
+                            { name: 'Memory System Overview', url: '#' },
+                            { name: 'Message Types Reference', url: '#' }
+                        ]
+                    },
+                    {
+                        id: 'p3-ch6-advanced-memory',
+                        number: 6,
+                        title: 'Advanced Memory Features',
+                        description: 'Token management, search, and optimization',
+                        duration: '10:00',
+                        videoUrl: 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4',
+                        transcript: [
+                            { time: 0, text: 'Let\'s explore advanced memory features for production use.' },
+                            { time: 20, text: 'Token limits prevent context overflow automatically.' },
+                            { time: 40, text: 'Search across conversations to find specific discussions quickly.' }
+                        ],
+                        resources: [
+                            { name: 'Token Management Guide', url: '#' },
+                            { name: 'Search API Reference', url: '#' }
+                        ]
+                    },
+                    {
+                        id: 'p3-ch7-persistence-basics',
+                        number: 7,
+                        title: 'Persistence Fundamentals',
+                        description: 'Saving and loading state across sessions',
+                        duration: '10:00',
+                        videoUrl: 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4',
+                        transcript: [
+                            { time: 0, text: 'Persistence ensures your work is never lost.' },
+                            { time: 20, text: 'HelixCode supports multiple formats: JSON, Compact, and GZIP.' },
+                            { time: 40, text: 'Auto-save can be configured to protect against unexpected issues.' }
+                        ],
+                        resources: [
+                            { name: 'Persistence Formats', url: '#' },
+                            { name: 'Configuration Guide', url: '#' }
+                        ]
+                    },
+                    {
+                        id: 'p3-ch8-advanced-persistence',
+                        number: 8,
+                        title: 'Advanced Persistence',
+                        description: 'Backup strategies, migration, and recovery',
+                        duration: '10:00',
+                        videoUrl: 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4',
+                        transcript: [
+                            { time: 0, text: 'Advanced persistence features for enterprise reliability.' },
+                            { time: 20, text: 'Create timestamped backups and implement rotation policies.' },
+                            { time: 40, text: 'Migrate between formats and recover from any backup point.' }
+                        ],
+                        resources: [
+                            { name: 'Backup Best Practices', url: '#' },
+                            { name: 'Recovery Procedures', url: '#' }
+                        ]
+                    },
+                    {
+                        id: 'p3-ch9-template-basics',
+                        number: 9,
+                        title: 'Template System Basics',
+                        description: 'Creating and using code templates',
+                        duration: '10:00',
+                        videoUrl: 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4',
+                        transcript: [
+                            { time: 0, text: 'Templates accelerate code generation with reusable patterns.' },
+                            { time: 20, text: 'Create templates for HTTP handlers, database models, and tests.' },
+                            { time: 40, text: 'Variables make templates dynamic and configurable.' }
+                        ],
+                        resources: [
+                            { name: 'Template Syntax Guide', url: '#' },
+                            { name: 'Built-in Templates', url: '#' }
+                        ]
+                    },
+                    {
+                        id: 'p3-ch10-advanced-templates',
+                        number: 10,
+                        title: 'Advanced Templates',
+                        description: 'Template composition, inheritance, and library management',
+                        duration: '10:00',
+                        videoUrl: 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4',
+                        transcript: [
+                            { time: 0, text: 'Advanced template features for complex code generation.' },
+                            { time: 20, text: 'Compose templates and use inheritance for DRY principles.' },
+                            { time: 40, text: 'Build and share template libraries across teams.' }
+                        ],
+                        resources: [
+                            { name: 'Template Composition', url: '#' },
+                            { name: 'Library Management', url: '#' }
+                        ]
+                    },
+                    {
+                        id: 'p3-ch11-integration-patterns',
+                        number: 11,
+                        title: 'Integration Patterns',
+                        description: 'Combining sessions, memory, persistence, and templates',
+                        duration: '10:00',
+                        videoUrl: 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4',
+                        transcript: [
+                            { time: 0, text: 'Now let\'s see how all Phase 3 systems work together.' },
+                            { time: 20, text: 'Sessions coordinate memory and templates for complete workflows.' },
+                            { time: 40, text: 'Persistence ensures everything is saved and recoverable.' }
+                        ],
+                        resources: [
+                            { name: 'Integration Guide', url: '#' },
+                            { name: 'Pattern Examples', url: '#' }
+                        ]
+                    },
+                    {
+                        id: 'p3-ch12-advanced-workflows',
+                        number: 12,
+                        title: 'Advanced Workflows',
+                        description: 'Building complete AI development pipelines',
+                        duration: '10:00',
+                        videoUrl: 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4',
+                        transcript: [
+                            { time: 0, text: 'Let\'s build a complete AI development workflow.' },
+                            { time: 20, text: 'From planning to deployment, we\'ll use all Phase 3 features.' },
+                            { time: 40, text: 'This integrated approach maximizes productivity and code quality.' }
+                        ],
+                        resources: [
+                            { name: 'Workflow Examples', url: '#' },
+                            { name: 'Best Practices', url: '#' }
+                        ]
+                    }
+                ]
             }
         };
     }

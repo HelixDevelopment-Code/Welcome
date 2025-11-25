@@ -1,17 +1,17 @@
 # HelixCode Website Version
 
-## Current Version: v1.0.0
+## Current Version: v1.1.0
 
-### Release Date: 2025-11-07
+### Release Date: 2025-11-25
 
 ---
 
 ## Version Information
 
-**Website Version**: 1.0.0  
-**Repository**: HelixDevelopment/HelixCode  
-**Deployment**: GitHub Pages  
-**Last Updated**: 2025-11-07
+**Website Version**: 1.1.0
+**Repository**: HelixDevelopment/HelixCode
+**Deployment**: GitHub Pages
+**Last Updated**: 2025-11-25
 
 ---
 
@@ -136,19 +136,19 @@
 
 ---
 
-## Upcoming Features (v1.1.0)
+## Upcoming Features (v1.2.0)
 
 ### 🚀 **Planned Enhancements**
 - Interactive demo playground
-- Video tutorials integration
 - Live chat support widget
-- Multi-language support
+- Multi-language support (i18n)
 - Advanced analytics dashboard
+- Real-time collaboration features
 
 ### 🔧 **Technical Improvements**
 - Service Worker for offline functionality
 - Web Components for modularity
-- Enhanced accessibility features
+- Enhanced accessibility features (WCAG 2.1 AA)
 - Improved performance metrics
 - PWA capabilities
 
@@ -165,6 +165,16 @@
 ---
 
 ## Changelog
+
+### v1.1.0 (2025-11-25)
+- ✅ Added Phase 3 Advanced Features video course (12 videos, 2 hours)
+- ✅ Updated course catalog with 4 total courses, 28 lessons
+- ✅ Added comprehensive test suite documentation
+- ✅ Updated statistics: 18+ AI providers, 35+ internal packages documented
+- ✅ Added video course production plan and exercises
+- ✅ Integrated Phase 3 session, memory, persistence, and template systems
+- ✅ Enhanced course data management system
+- ✅ Updated website footer and navigation links
 
 ### v1.0.0 (2025-11-07)
 - ✅ Initial release with complete feature set

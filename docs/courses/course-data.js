@@ -502,6 +502,264 @@ class CourseDataManager {
                         ]
                     }
                 ]
+            },
+            'platform-development': {
+                id: 'platform-development',
+                title: 'Platform-Specific Development',
+                description: 'Learn how to build and deploy HelixCode on different platforms including mobile, Aurora OS, and Harmony OS',
+                instructor: 'HelixCode Team',
+                duration: '2h 25m',
+                level: 'intermediate',
+                chapters: [
+                    {
+                        id: 'pd-ch1-mobile-overview',
+                        number: 1,
+                        title: 'Mobile Development Overview',
+                        description: 'Introduction to mobile development with HelixCode',
+                        duration: '20:00',
+                        videoUrl: 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4',
+                        transcript: [
+                            { time: 0, text: 'Welcome to Platform-Specific Development! Let\'s explore mobile development with HelixCode.' },
+                            { time: 20, text: 'HelixCode uses gomobile bindings to create native iOS and Android libraries.' },
+                            { time: 40, text: 'We\'ll cover the architecture and build process for mobile platforms.' }
+                        ],
+                        resources: [
+                            { name: 'Mobile Architecture Guide', url: '#' },
+                            { name: 'Prerequisites Checklist', url: '#' }
+                        ]
+                    },
+                    {
+                        id: 'pd-ch2-ios-integration',
+                        number: 2,
+                        title: 'iOS Integration Guide',
+                        description: 'Build and integrate HelixCode with iOS applications',
+                        duration: '25:00',
+                        videoUrl: 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4',
+                        transcript: [
+                            { time: 0, text: 'Let\'s dive into iOS integration with HelixCode.' },
+                            { time: 25, text: 'We\'ll use gomobile to generate an iOS framework.' },
+                            { time: 50, text: 'Then integrate it into an Xcode project for native performance.' }
+                        ],
+                        resources: [
+                            { name: 'iOS Integration Guide', url: '#' },
+                            { name: 'Xcode Project Template', url: '#' }
+                        ]
+                    },
+                    {
+                        id: 'pd-ch3-android-integration',
+                        number: 3,
+                        title: 'Android Integration Guide',
+                        description: 'Build and integrate HelixCode with Android applications',
+                        duration: '25:00',
+                        videoUrl: 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4',
+                        transcript: [
+                            { time: 0, text: 'Now let\'s explore Android integration with HelixCode.' },
+                            { time: 25, text: 'We\'ll generate AAR files using gomobile bind.' },
+                            { time: 50, text: 'Then integrate them into Android Studio projects.' }
+                        ],
+                        resources: [
+                            { name: 'Android Integration Guide', url: '#' },
+                            { name: 'Gradle Configuration', url: '#' }
+                        ]
+                    },
+                    {
+                        id: 'pd-ch4-aurora-os',
+                        number: 4,
+                        title: 'Aurora OS Features',
+                        description: 'Develop HelixCode applications for Aurora OS',
+                        duration: '25:00',
+                        videoUrl: 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4',
+                        transcript: [
+                            { time: 0, text: 'Aurora OS is a mobile operating system based on Sailfish OS.' },
+                            { time: 25, text: 'HelixCode provides specialized support for Aurora OS development.' },
+                            { time: 50, text: 'We\'ll build and deploy a HelixCode-powered app on Aurora OS.' }
+                        ],
+                        resources: [
+                            { name: 'Aurora OS SDK Guide', url: '#' },
+                            { name: 'Platform Specifications', url: '#' }
+                        ]
+                    },
+                    {
+                        id: 'pd-ch5-harmony-os',
+                        number: 5,
+                        title: 'Harmony OS Distributed Computing',
+                        description: 'Leverage Harmony OS distributed capabilities with HelixCode',
+                        duration: '30:00',
+                        videoUrl: 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4',
+                        transcript: [
+                            { time: 0, text: 'Harmony OS offers unique distributed computing capabilities.' },
+                            { time: 30, text: 'HelixCode can leverage these for cross-device AI workflows.' },
+                            { time: 60, text: 'We\'ll explore distributed task execution across Harmony OS devices.' }
+                        ],
+                        resources: [
+                            { name: 'Harmony OS Integration', url: '#' },
+                            { name: 'Distributed Computing Guide', url: '#' }
+                        ]
+                    },
+                    {
+                        id: 'pd-ch6-cross-platform',
+                        number: 6,
+                        title: 'Cross-Platform Strategies',
+                        description: 'Best practices for cross-platform HelixCode development',
+                        duration: '20:00',
+                        videoUrl: 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4',
+                        transcript: [
+                            { time: 0, text: 'Let\'s discuss cross-platform development strategies.' },
+                            { time: 20, text: 'Share code effectively between iOS, Android, Aurora OS, and Harmony OS.' },
+                            { time: 40, text: 'Implement platform-specific features while maintaining a unified codebase.' }
+                        ],
+                        resources: [
+                            { name: 'Cross-Platform Best Practices', url: '#' },
+                            { name: 'Code Sharing Guide', url: '#' }
+                        ]
+                    }
+                ]
+            },
+            'testing-qa': {
+                id: 'testing-qa',
+                title: 'Testing and Quality Assurance',
+                description: 'Master the HelixCode testing framework with unit, integration, E2E, security, and performance testing',
+                instructor: 'HelixCode Team',
+                duration: '2h 40m',
+                level: 'intermediate',
+                chapters: [
+                    {
+                        id: 'tqa-ch1-framework-overview',
+                        number: 1,
+                        title: 'Testing Framework Overview',
+                        description: 'Introduction to the HelixCode testing ecosystem',
+                        duration: '15:00',
+                        videoUrl: 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4',
+                        transcript: [
+                            { time: 0, text: 'Welcome to Testing and Quality Assurance for HelixCode!' },
+                            { time: 15, text: 'We\'ll cover the complete testing stack: unit, integration, E2E, and more.' },
+                            { time: 30, text: 'HelixCode uses Go\'s testing package with testify for assertions.' }
+                        ],
+                        resources: [
+                            { name: 'Testing Framework Overview', url: '#' },
+                            { name: 'Test Organization Guide', url: '#' }
+                        ]
+                    },
+                    {
+                        id: 'tqa-ch2-unit-tests',
+                        number: 2,
+                        title: 'Writing Unit Tests',
+                        description: 'Create effective unit tests for HelixCode components',
+                        duration: '20:00',
+                        videoUrl: 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4',
+                        transcript: [
+                            { time: 0, text: 'Unit tests are the foundation of a reliable codebase.' },
+                            { time: 20, text: 'We\'ll write tests for individual functions and methods.' },
+                            { time: 40, text: 'Learn to use mocks and stubs for isolated testing.' }
+                        ],
+                        resources: [
+                            { name: 'Unit Testing Guide', url: '#' },
+                            { name: 'Mock Examples', url: '#' }
+                        ]
+                    },
+                    {
+                        id: 'tqa-ch3-integration-tests',
+                        number: 3,
+                        title: 'Integration Testing Strategies',
+                        description: 'Test component interactions and external dependencies',
+                        duration: '25:00',
+                        videoUrl: 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4',
+                        transcript: [
+                            { time: 0, text: 'Integration tests verify that components work together correctly.' },
+                            { time: 25, text: 'We\'ll test database interactions, API endpoints, and services.' },
+                            { time: 50, text: 'Learn strategies for managing test data and dependencies.' }
+                        ],
+                        resources: [
+                            { name: 'Integration Testing Guide', url: '#' },
+                            { name: 'Test Database Setup', url: '#' }
+                        ]
+                    },
+                    {
+                        id: 'tqa-ch4-e2e-tests',
+                        number: 4,
+                        title: 'E2E Test Creation',
+                        description: 'Build comprehensive end-to-end tests',
+                        duration: '25:00',
+                        videoUrl: 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4',
+                        transcript: [
+                            { time: 0, text: 'End-to-end tests validate complete user workflows.' },
+                            { time: 25, text: 'We\'ll create tests that span the entire application stack.' },
+                            { time: 50, text: 'Learn to simulate real-world usage scenarios.' }
+                        ],
+                        resources: [
+                            { name: 'E2E Testing Guide', url: '#' },
+                            { name: 'Workflow Test Examples', url: '#' }
+                        ]
+                    },
+                    {
+                        id: 'tqa-ch5-challenge-framework',
+                        number: 5,
+                        title: 'Challenge Test Framework',
+                        description: 'Use the HelixCode challenge framework for AI validation',
+                        duration: '20:00',
+                        videoUrl: 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4',
+                        transcript: [
+                            { time: 0, text: 'The challenge test framework validates AI code generation.' },
+                            { time: 20, text: 'We\'ll create challenges that test HelixCode\'s ability to generate working projects.' },
+                            { time: 40, text: 'Learn to define success criteria and validation steps.' }
+                        ],
+                        resources: [
+                            { name: 'Challenge Framework Guide', url: '#' },
+                            { name: 'Sample Challenges', url: '#' }
+                        ]
+                    },
+                    {
+                        id: 'tqa-ch6-security-testing',
+                        number: 6,
+                        title: 'Security Testing',
+                        description: 'Implement security tests for HelixCode applications',
+                        duration: '20:00',
+                        videoUrl: 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4',
+                        transcript: [
+                            { time: 0, text: 'Security testing is critical for enterprise applications.' },
+                            { time: 20, text: 'We\'ll test authentication, authorization, and input validation.' },
+                            { time: 40, text: 'Learn to identify and prevent common security vulnerabilities.' }
+                        ],
+                        resources: [
+                            { name: 'Security Testing Checklist', url: '#' },
+                            { name: 'Vulnerability Prevention', url: '#' }
+                        ]
+                    },
+                    {
+                        id: 'tqa-ch7-performance',
+                        number: 7,
+                        title: 'Performance Benchmarking',
+                        description: 'Measure and optimize HelixCode performance',
+                        duration: '20:00',
+                        videoUrl: 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4',
+                        transcript: [
+                            { time: 0, text: 'Performance benchmarking ensures your application meets requirements.' },
+                            { time: 20, text: 'We\'ll use Go\'s built-in benchmarking tools.' },
+                            { time: 40, text: 'Learn to identify bottlenecks and optimize critical paths.' }
+                        ],
+                        resources: [
+                            { name: 'Benchmarking Guide', url: '#' },
+                            { name: 'Performance Optimization Tips', url: '#' }
+                        ]
+                    },
+                    {
+                        id: 'tqa-ch8-cicd',
+                        number: 8,
+                        title: 'CI/CD Pipeline Setup',
+                        description: 'Automate testing with continuous integration',
+                        duration: '15:00',
+                        videoUrl: 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4',
+                        transcript: [
+                            { time: 0, text: 'Continuous integration automates your testing workflow.' },
+                            { time: 15, text: 'We\'ll set up GitHub Actions for automated testing.' },
+                            { time: 30, text: 'Learn to configure test stages and handle failures.' }
+                        ],
+                        resources: [
+                            { name: 'CI/CD Configuration Guide', url: '#' },
+                            { name: 'GitHub Actions Templates', url: '#' }
+                        ]
+                    }
+                ]
             }
         };
     }

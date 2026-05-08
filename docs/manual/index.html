@@ -66,9 +66,11 @@
                             <div class="toc-subsection">
                                 <a href="#41-file-system-tools" class="toc-sublink">4.1 File System Tools</a>
                                 <a href="#42-shell-execution" class="toc-sublink">4.2 Shell Execution</a>
+                                <a href="#421-sandbox-configuration" class="toc-sublink">4.2.1 Sandbox Configuration</a>
                                 <a href="#43-browser-control" class="toc-sublink">4.3 Browser Control</a>
                                 <a href="#44-codebase-mapping" class="toc-sublink">4.4 Codebase Mapping</a>
                                 <a href="#45-web-tools" class="toc-sublink">4.5 Web Tools</a>
+                                <a href="#451-search-provider-configuration" class="toc-sublink">4.5.1 Search Provider Configuration</a>
                                 <a href="#46-voice-to-code" class="toc-sublink">4.6 Voice-to-Code</a>
                             </div>
                             <a href="#5-workflows" class="toc-link">5. Workflows</a>
@@ -90,7 +92,13 @@
                             <a href="#9-configuration" class="toc-link">9. Configuration</a>
                             <a href="#10-best-practices" class="toc-link">10. Best Practices</a>
                             <a href="#11-troubleshooting" class="toc-link">11. Troubleshooting</a>
+                            <div class="toc-subsection">
+                                <a href="#111-ssh-worker-issues" class="toc-sublink">11.1 SSH Worker Issues</a>
+                                <a href="#112-llm-connection-issues" class="toc-sublink">11.2 LLM Connection Issues</a>
+                                <a href="#113-rate-limit-handling" class="toc-sublink">11.3 Rate Limit Handling</a>
+                            </div>
                             <a href="#12-faq" class="toc-link">12. FAQ</a>
+                            <a href="#13-memory-system" class="toc-link">13. Memory System</a>
                         </nav>
                     </div>
                 </aside>
@@ -452,6 +460,37 @@ result, _ := executor.Execute(ctx, &shell.Command{
 })</code></pre>
                         </div>
 
+                        <!-- 4.2.1 Sandbox Configuration -->
+                        <div id="421-sandbox-configuration" class="subsection">
+                            <h4>Sandbox Configuration</h4>
+                            <p><strong>Configurable sandbox for secure command execution.</strong></p>
+
+                            <pre><code>shell:
+  sandbox:
+    enabled: true
+    allowed_commands:
+      - "go"
+      - "python"
+      - "node"
+      - "npm"
+      - "git"
+      - "docker"
+      - "make"
+      - "curl"
+      - "ls"
+      - "cat"
+      - "grep"
+      - "find"
+    blocked_commands:
+      - "rm -rf /"
+      - "dd"
+      - "mkfs"
+    timeout: 300
+    max_output_size: 10485760</code></pre>
+
+                            <p>Commands not in <code>allowed_commands</code> require interactive confirmation. Commands matching <code>blocked_commands</code> are rejected outright. Set <code>sandbox.enabled: false</code> only in trusted, isolated environments.</p>
+                        </div>
+
                         <!-- 4.3 Browser Control -->
                         <div id="43-browser-control" class="subsection">
                             <h3>4.3 Browser Control ⭐ NEW</h3>
@@ -530,6 +569,25 @@ results, _ := wt.Search(ctx, "golang best practices", web.SearchOptions{
 
 // Fetch and parse
 markdown, metadata, _ := wt.FetchAndParse(ctx, "https://example.com")</code></pre>
+                        </div>
+
+                        <!-- 4.5.1 Search Provider Configuration -->
+                        <div id="451-search-provider-configuration" class="subsection">
+                            <h4>Search Provider Configuration</h4>
+                            <p><strong>Configurable web search and fetch providers.</strong></p>
+
+                            <pre><code>web:
+  search:
+    provider: "tavily"
+    api_key: "${TAVILY_API_KEY}"
+    max_results: 8
+    safe_search: true
+  fetch:
+    user_agent: "HelixCode/2.0"
+    timeout: 30
+    max_size: 5242880</code></pre>
+
+                            <p>Supported providers: Tavily (recommended — AI-optimized), Google Custom Search, Bing Web Search, DuckDuckGo (no API key needed, rate-limited).</p>
                         </div>
 
                         <!-- 4.6 Voice-to-Code -->
@@ -1079,6 +1137,102 @@ helixcode server</code></pre>
                         <pre><code>tail -f /var/log/helix/helixcode.log</code></pre>
                     </section>
 
+                    <!-- 11.1 SSH Worker Issues -->
+                    <div id="111-ssh-worker-issues" class="subsection">
+                        <h3>SSH Worker Issues</h3>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Symptom</th>
+                                    <th>Cause</th>
+                                    <th>Fix</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>"connection refused"</td>
+                                    <td>Worker SSH not running</td>
+                                    <td><code>systemctl start sshd</code> on worker</td>
+                                </tr>
+                                <tr>
+                                    <td>"permission denied (publickey)"</td>
+                                    <td>Key not authorized</td>
+                                    <td><code>ssh-copy-id user@worker</code></td>
+                                </tr>
+                                <tr>
+                                    <td>"host key verification failed"</td>
+                                    <td>Host key changed</td>
+                                    <td><code>ssh-keygen -R worker-hostname</code></td>
+                                </tr>
+                                <tr>
+                                    <td>"worker timed out after 30s"</td>
+                                    <td>Network latency</td>
+                                    <td>Increase <code>workers.health_ttl</code> in config</td>
+                                </tr>
+                                <tr>
+                                    <td>"worker rejected task"</td>
+                                    <td>Capability mismatch</td>
+                                    <td>Check <code>workers.capabilities</code> config</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- 11.2 LLM Connection Issues -->
+                    <div id="112-llm-connection-issues" class="subsection">
+                        <h3>LLM Connection Issues</h3>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Symptom</th>
+                                    <th>Cause</th>
+                                    <th>Fix</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>"401 Unauthorized"</td>
+                                    <td>Invalid API key</td>
+                                    <td>Check <code>HELIX_*_API_KEY</code> env var</td>
+                                </tr>
+                                <tr>
+                                    <td>"429 Too Many Requests"</td>
+                                    <td>Rate limited</td>
+                                    <td>Enable rate limiter: <code>llm.rate_limit.enabled: true</code></td>
+                                </tr>
+                                <tr>
+                                    <td>"503 Service Unavailable"</td>
+                                    <td>Provider outage</td>
+                                    <td>Enable fallback: <code>llm.selection.fallback_enabled: true</code></td>
+                                </tr>
+                                <tr>
+                                    <td>"model not found"</td>
+                                    <td>Wrong model name</td>
+                                    <td>Run <code>helix models</code> to list available models</td>
+                                </tr>
+                                <tr>
+                                    <td>"context window exceeded"</td>
+                                    <td>Too many tokens</td>
+                                    <td>Enable compression: <code>llm.compression.enabled: true</code></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- 11.3 Rate Limit Handling -->
+                    <div id="113-rate-limit-handling" class="subsection">
+                        <h3>Rate Limit Handling</h3>
+                        <pre><code>llm:
+  rate_limit:
+    enabled: true
+    strategy: "token_bucket"
+    requests_per_minute: 60
+    burst: 10
+    backoff_base: 2
+    backoff_max: 120</code></pre>
+                        <p>When rate limited, HelixCode automatically queues requests and retries with exponential backoff. Configure different limits per provider.</p>
+                    </div>
+
                     <!-- 12. FAQ -->
                     <section id="12-faq" class="manual-section">
                         <h2>12. FAQ</h2>
@@ -1132,6 +1286,96 @@ helixcode server</code></pre>
                             <h4>Q: How do I contribute?</h4>
                             <p>A: See CONTRIBUTING.md in the repository.</p>
                         </div>
+                    </section>
+
+                    <!-- 13. Memory System -->
+                    <section id="13-memory-system" class="manual-section">
+                        <h2>13. Memory System</h2>
+                        <p>Persistent memory backends for context retention across sessions.</p>
+
+                        <h3>13.1 Available Backends</h3>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Backend</th>
+                                    <th>Persistence</th>
+                                    <th>Scaling</th>
+                                    <th>Use Case</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>In-Memory</td>
+                                    <td>None (ephemeral)</td>
+                                    <td>Single process</td>
+                                    <td>Development, testing</td>
+                                </tr>
+                                <tr>
+                                    <td>Filesystem</td>
+                                    <td>Disk (JSON)</td>
+                                    <td>Single node</td>
+                                    <td>Small projects</td>
+                                </tr>
+                                <tr>
+                                    <td>Redis</td>
+                                    <td>RAM + RDB/AOF</td>
+                                    <td>Distributed</td>
+                                    <td>High-speed caching</td>
+                                </tr>
+                                <tr>
+                                    <td>Memcached</td>
+                                    <td>RAM (volatile)</td>
+                                    <td>Distributed</td>
+                                    <td>Session cache</td>
+                                </tr>
+                                <tr>
+                                    <td>ChromaDB</td>
+                                    <td>Disk (vector)</td>
+                                    <td>Distributed</td>
+                                    <td>Semantic search</td>
+                                </tr>
+                                <tr>
+                                    <td>Qdrant</td>
+                                    <td>Disk (vector)</td>
+                                    <td>Distributed</td>
+                                    <td>Production RAG</td>
+                                </tr>
+                                <tr>
+                                    <td>Weaviate</td>
+                                    <td>Disk (vector + hybrid)</td>
+                                    <td>Distributed</td>
+                                    <td>Enterprise RAG</td>
+                                </tr>
+                                <tr>
+                                    <td>Cognee</td>
+                                    <td>Disk (graph + vector)</td>
+                                    <td>Distributed</td>
+                                    <td>AI-native memory</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <h3>13.2 Configuration</h3>
+                        <pre><code>memory:
+  backend: "chromadb"
+  connection:
+    host: "localhost"
+    port: 8000
+    tls: false
+  persistence:
+    path: "/var/lib/helixcode/memory/"
+    sync_interval: 60
+  vector:
+    dimensions: 1536
+    distance: "cosine"</code></pre>
+
+                        <h3>13.3 Choosing the Right Backend</h3>
+                        <ul>
+                            <li><strong>Development</strong>: Start with <code>filesystem</code> — zero dependencies, data survives restart</li>
+                            <li><strong>Team</strong>: Use <code>redis</code> — fast, shared across team members</li>
+                            <li><strong>Semantic search</strong>: Use <code>chromadb</code> or <code>qdrant</code> — vector similarity for context retrieval</li>
+                            <li><strong>Enterprise</strong>: Use <code>weaviate</code> or <code>cognee</code> — hybrid search, multi-tenancy, audit trails</li>
+                        </ul>
                     </section>
                 </main>
             </div>

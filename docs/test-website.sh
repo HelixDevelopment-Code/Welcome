@@ -143,54 +143,90 @@ test_docker_build() {
     fi
 }
 
+# Function to start a local HTTP server for testing
+start_local_server() {
+    local port=$1
+    if command_exists python3; then
+        python3 -m http.server "$port" > /dev/null 2>&1 &
+        local pid=$!
+        echo $pid > .website-pid
+        echo $port > .website-port
+        return 0
+    fi
+    return 1
+}
+
+# Function to stop local HTTP server
+stop_local_server() {
+    if [ -f .website-pid ]; then
+        local pid=$(cat .website-pid)
+        kill $pid 2>/dev/null || true
+        rm -f .website-pid
+    fi
+    rm -f .website-port
+}
+
 # Function to test website functionality
 test_website_functionality() {
     log "Testing website functionality..."
+    local started_with_container=false
     
     # Start website temporarily
     if ./start-website.sh > /dev/null 2>&1; then
+        started_with_container=true
         sleep 10
-        
-        local port=$(cat .website-port 2>/dev/null || echo "8000")
-        
-        # Test main page
-        if curl -f "http://localhost:$port/" > /dev/null 2>&1; then
-            log "✓ Main page loads successfully"
-        else
-            error "Main page failed to load"
-            return 1
-        fi
-        
-        # Test CSS loading
-        if curl -f "http://localhost:$port/styles/main.css" > /dev/null 2>&1; then
-            log "✓ CSS files are accessible"
-        else
-            error "CSS files are not accessible"
-            return 1
-        fi
-        
-        # Test JavaScript loading
-        if curl -f "http://localhost:$port/js/main.js" > /dev/null 2>&1; then
-            log "✓ JavaScript files are accessible"
-        else
-            error "JavaScript files are not accessible"
-            return 1
-        fi
-        
-        # Test fractal system
-        if curl -f "http://localhost:$port/js/fractal.js" > /dev/null 2>&1; then
-            log "✓ Fractal system is accessible"
-        else
-            error "Fractal system is not accessible"
-            return 1
-        fi
-        
-        # Stop website
-        ./stop-website.sh > /dev/null 2>&1
-        
+    elif command_exists python3; then
+        warn "Container runtime not available, using Python HTTP server for testing"
+        start_local_server 8000
+        sleep 2
     else
-        error "Failed to start website for testing"
+        error "Failed to start website for testing (no container runtime or Python3 available)"
         return 1
+    fi
+    
+    local port=$(cat .website-port 2>/dev/null || echo "8000")
+    
+    # Test main page
+    if curl -f "http://localhost:$port/" > /dev/null 2>&1; then
+        log "✓ Main page loads successfully"
+    else
+        error "Main page failed to load"
+        if $started_with_container; then ./stop-website.sh > /dev/null 2>&1; else stop_local_server; fi
+        return 1
+    fi
+    
+    # Test CSS loading
+    if curl -f "http://localhost:$port/styles/main.css" > /dev/null 2>&1; then
+        log "✓ CSS files are accessible"
+    else
+        error "CSS files are not accessible"
+        if $started_with_container; then ./stop-website.sh > /dev/null 2>&1; else stop_local_server; fi
+        return 1
+    fi
+    
+    # Test JavaScript loading
+    if curl -f "http://localhost:$port/js/main.js" > /dev/null 2>&1; then
+        log "✓ JavaScript files are accessible"
+    else
+        error "JavaScript files are not accessible"
+        if $started_with_container; then ./stop-website.sh > /dev/null 2>&1; else stop_local_server; fi
+        return 1
+    fi
+    
+    # Test fractal system
+    if curl -f "http://localhost:$port/js/fractal.js" > /dev/null 2>&1; then
+        log "✓ Fractal system is accessible"
+    else
+        error "Fractal system is not accessible"
+        if $started_with_container; then ./stop-website.sh > /dev/null 2>&1; else stop_local_server; fi
+        return 1
+    fi
+    
+    # Stop website
+    if $started_with_container; then
+        ./stop-website.sh > /dev/null 2>&1
+    else
+        stop_local_server
     fi
 }
 

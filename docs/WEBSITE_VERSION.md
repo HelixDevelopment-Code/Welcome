@@ -187,10 +187,10 @@
 
 ## Support
 
-- **Documentation**: [Full Documentation](https://github.com/HelixDevelopment/HelixCode/tree/main/docs)
-- **Issues**: [GitHub Issues](https://github.com/HelixDevelopment/HelixCode/issues)
-- **Discussions**: [GitHub Discussions](https://github.com/HelixDevelopment/HelixCode/discussions)
-- **Releases**: [GitHub Releases](https://github.com/HelixDevelopment/HelixCode/releases)
+- **Documentation**: [Full Documentation](https://github.com/HelixDevelopment/helix_code/tree/main/docs)
+- **Issues**: [GitHub Issues](https://github.com/HelixDevelopment/helix_code/issues)
+- **Discussions**: [GitHub Discussions](https://github.com/HelixDevelopment/helix_code/discussions)
+- **Releases**: [GitHub Releases](https://github.com/HelixDevelopment/helix_code/releases)
 
 ---
 

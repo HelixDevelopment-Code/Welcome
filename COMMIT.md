@@ -341,8 +341,8 @@ Comprehensive website redesign with responsive design optimization, broken link 
 - **Browser compatibility** testing with new releases
 
 ### Contact Information
-- **Documentation Issues**: [GitHub Issues](https://github.com/HelixDevelopment/HelixCode/issues)
-- **Feature Requests**: [GitHub Discussions](https://github.com/HelixDevelopment/HelixCode/discussions)
+- **Documentation Issues**: [GitHub Issues](https://github.com/HelixDevelopment/helix_code/issues)
+- **Feature Requests**: [GitHub Discussions](https://github.com/HelixDevelopment/helix_code/discussions)
 - **Security Concerns**: [Private Repository Access](mailto:security@helixcode.com)
 
 ---

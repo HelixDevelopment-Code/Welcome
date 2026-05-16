@@ -81,7 +81,7 @@ HelixCode is an enterprise-grade distributed AI development platform built in Go
 
 ## Working Directory & Build System
 
-**CRITICAL**: All build and test commands must be run from the `HelixCode/` subdirectory, not the repository root.
+**CRITICAL**: All build and test commands must be run from the `helix_code/` subdirectory, not the repository root.
 
 ```bash
 cd HelixCode
@@ -143,7 +143,7 @@ cd tests/e2e/challenges && go run cmd/runner/main.go -challenge ascii-art-genera
 ## Architecture & Code Organization
 
 ```
-HelixCode/
+helix_code/
 ├── cmd/                          # Application entry points
 │   ├── server/main.go            # HTTP server entry point
 │   ├── cli/main.go               # Legacy flag-based CLI client
@@ -641,7 +641,7 @@ curl http://localhost/health
 - Build tags for integration/automation tests: `//go:build integration`
 
 ### Project Conventions
-- **Always work from `HelixCode/` subdirectory**
+- **Always work from `helix_code/` subdirectory**
 - **Generate logo assets before first build**: `make logo-assets`
 - **Database/Redis optional**: Disable by setting `database.host: ""`
 - **Environment variables override config file**
@@ -834,8 +834,8 @@ OpenAI, Anthropic, Gemini, DeepSeek, Groq, Mistral, xAI, OpenRouter, Ollama, Lla
 - **Gap Analysis**: `HELIXCODE_GAP_ANALYSIS.md`
 - **Zero-Bluff Plan**: `HELIXCODE_ZERO_BLUFF_PLAN.md`
 - **Testing Strategy**: `ANTI_BLUFF_TESTING_STRATEGY.md`
-- **OpenAPI Spec**: `HelixCode/api/openapi.yaml`
-- **Docker Guide**: `HelixCode/DOCKER_DEPLOYMENT.md`
+- **OpenAPI Spec**: `helix_code/api/openapi.yaml`
+- **Docker Guide**: `helix_code/DOCKER_DEPLOYMENT.md`
 
 ---
 

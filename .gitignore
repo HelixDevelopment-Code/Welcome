@@ -1,2 +1,9 @@
 .idea
 .idea/*
+
+# Runtime nginx logs produced by the containerized website (start-website.sh
+# bind-mounts ./nginx-logs into the container). These are build/runtime
+# artifacts and MUST NOT be versioned (CONST-053). A pattern containing a
+# non-trailing slash is anchored to this .gitignore's directory, so we use the
+# leading **/ to also match the real location at docs/nginx-logs/.
+**/nginx-logs/*.log

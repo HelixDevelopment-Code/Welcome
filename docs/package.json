@@ -13,9 +13,9 @@
     "test:docker": "./test-website.sh docker",
     "test:functionality": "./test-website.sh functionality",
     "dev": "python3 -m http.server 8000",
-    "build": "echo 'Building latest version...' && docker-compose build --no-cache",
-    "logs": "docker-compose logs -f",
-    "status": "docker-compose ps"
+    "build": "podman build --no-cache -t helixcode-website -f Containerfile .",
+    "logs": "podman logs -f helixcode-website",
+    "status": "podman ps --filter name=helixcode-website"
   },
   "keywords": [
     "helixcode",

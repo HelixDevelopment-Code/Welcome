@@ -38,19 +38,38 @@ command_exists() {
     command -v "$1" >/dev/null 2>&1
 }
 
+# Exit code reserved for an honest, non-PASS SKIP (tool genuinely required but
+# absent). NOT counted as a passing result — distinct from success (0) and
+# from a hard failure (1) so callers can distinguish "could not validate" from
+# "validated and failed" and from "validated and passed".
+SKIP_EXIT_CODE=3
+
 # Function to run HTML validation
+#
+# Anti-bluff (§11.4.98 / CONST-035): a PASS asserts the HTML is genuinely
+# valid. If html5validator is not available we MUST NOT report a green pass —
+# nothing was asserted. We surface an explicit non-success result instead.
 validate_html() {
     log "Validating HTML structure..."
-    
+
     if command_exists html5validator; then
         if html5validator --root . --ignore "node_modules/*" --ignore "*.log"; then
             log "✓ HTML validation passed"
+            return 0
         else
-            warn "HTML validation found issues"
+            error "HTML validation found issues"
+            return 1
         fi
     else
-        warn "html5validator not installed, skipping HTML validation"
-        info "Install with: pip install html5validator"
+        # html5validator is REQUIRED to make the "HTML is valid" claim. Without
+        # it the validation did not run, so this is NOT a pass. Report an
+        # explicit non-PASS SKIP and return a distinct non-success exit code.
+        error "HTML validation REQUIRES html5validator — not installed, so HTML was NOT validated. Reporting SKIPPED (non-PASS), not success."
+        info "Run it in the containerized validator with podman (no host package install, per §11.4.76):"
+        info "  podman run --rm -v \"\$(pwd)\":/data:z docker.io/cyb3rjak3/html5validator:latest \\"
+        info "    --root /data --ignore 'node_modules/*' --ignore '*.log'"
+        info "Direct host install (alternative): pipx install html5validator  (or: pip install html5validator)"
+        return $SKIP_EXIT_CODE
     fi
 }
 
@@ -289,12 +308,21 @@ test_performance() {
 # Function to run all tests
 run_all_tests() {
     local failed_tests=0
-    
+    local skipped_tests=0
+
     log "Starting comprehensive website tests..."
     echo
-    
-    # Run validation tests
-    validate_html || ((failed_tests++))
+
+    # Run validation tests.
+    # A non-PASS SKIP (SKIP_EXIT_CODE) is recorded separately and is NEVER
+    # counted as success — it still prevents the overall run from claiming a
+    # clean green (§11.4.98).
+    validate_html
+    case $? in
+        0) ;;
+        $SKIP_EXIT_CODE) ((skipped_tests++)) ;;
+        *) ((failed_tests++)) ;;
+    esac
     echo
     
     validate_css || ((failed_tests++))
@@ -317,12 +345,18 @@ run_all_tests() {
     echo
     
     # Summary
-    if [ $failed_tests -eq 0 ]; then
+    if [ $failed_tests -ne 0 ]; then
+        error "$failed_tests test(s) failed, $skipped_tests skipped (non-PASS)"
+        return 1
+    elif [ $skipped_tests -ne 0 ]; then
+        # No outright failures, but at least one check could not actually
+        # validate its claim. This is NOT a clean pass (§11.4.98) — return the
+        # distinct SKIP exit code so the run is not mistaken for all-green.
+        warn "$skipped_tests test(s) SKIPPED (non-PASS) because a required validator was unavailable — overall result is NOT a clean pass"
+        return $SKIP_EXIT_CODE
+    else
         log "🎉 All tests passed successfully!"
         return 0
-    else
-        error "$failed_tests test(s) failed"
-        return 1
     fi
 }
 
